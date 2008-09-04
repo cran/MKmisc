@@ -1,0 +1,10 @@
+citHeader("To cite package MKmisc in publications use:")
+
+citEntry(entry="Manual",
+         title = "MKmisc: Miscellaneous functions from M. Kohl",
+         author = personList(as.person("M. Kohl")),
+         language = "English",
+         year = 2008,
+         type = "R package",
+         url = "http://www.stamats.de",
+         textVersion = paste("Kohl, M., (2008).", "MKmisc: Miscellaneous functions from M. Kohl", "R package."))
