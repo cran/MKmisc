@@ -1,5 +1,6 @@
 ## compute pairwise fold changes
-pairwise.fc <- function (x, g, ave = mean, log = TRUE, base = 2, ...) {
+pairwise.fc <- function (x, g, ave = mean, log = TRUE, base = 2, 
+                         mod.fc = TRUE, ...) {
     g <- factor(g)
     compare.levels <- function(i, j) {
         xi <- x[as.integer(g) == i]
@@ -10,7 +11,10 @@ pairwise.fc <- function (x, g, ave = mean, log = TRUE, base = 2, ...) {
         }else{
             FC <- ave(xj, ...)/ave(xi, ...)
         }
-        return(ifelse(FC > 1, FC, -1/FC))
+        if(mod.fc)
+          return(ifelse(FC > 1, FC, -1/FC))
+        else
+          return(FC)
     }
     ix <- seq_along(levels(g))
     names(ix) <- levels(g)
@@ -22,10 +26,10 @@ pairwise.fc <- function (x, g, ave = mean, log = TRUE, base = 2, ...) {
                 compare.levels(i, j)
             else NA
         }))
-    pp <- pp[!is.na(pp)]
+    pp <- pp[lower.tri(pp, diag = TRUE)]
 
     nr <- length(levels(g))
-    Names <- choose(nr, 2)
+    Names <- numeric(choose(nr, 2))
     Levels <- levels(g)
     count <- 0
     for(i in seq_len(nr-1))

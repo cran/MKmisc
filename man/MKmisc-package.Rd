@@ -12,11 +12,12 @@ Miscellaneous Functions from M. Kohl.
 \tabular{ll}{
 Package: \tab MKmisc\cr
 Type: \tab Package\cr
-Version: \tab 0.1\cr
-Date: \tab 2008-09-04\cr
-Depends: \tab R(>= 2.7.2), stats, graphics, robustbase, RColorBrewer, plotrix(>= 2.1.6)\cr
-Suggests: gplots
-License: \tab GPL (version 2 or later)\cr
+Version: \tab 0.3\cr
+Date: \tab 2008-11-27\cr
+Depends: \tab R(>= 2.7.0), stats, graphics, robustbase, RColorBrewer, plotrix(>= 2.1.6)\cr
+Suggests: \tab gplots\cr
+License: \tab LGPL-3\cr
+URL: \tab http://www.stamats.de/\cr
 }
 require(MKmisc)
 }
