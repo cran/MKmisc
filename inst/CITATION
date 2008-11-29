@@ -7,4 +7,4 @@ citEntry(entry="Manual",
          year = 2008,
          type = "R package",
          url = "http://www.stamats.de",
-         textVersion = paste("Kohl, M., (2008).", "MKmisc: Miscellaneous functions from M. Kohl", "R package."))
+         textVersion = paste("Kohl, M., (2008).", "MKmisc: Miscellaneous functions from M. Kohl.", "R package."))

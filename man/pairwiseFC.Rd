@@ -6,7 +6,7 @@
   logarithmic data. 
 }
 \usage{
-pairwise.fc(x, g, ave = mean, log = TRUE, base = 2, ...)
+pairwise.fc(x, g, ave = mean, log = TRUE, base = 2, mod.fc = TRUE, ...)
 }
 \arguments{
   \item{x}{ numeric vector. }
@@ -15,6 +15,7 @@ pairwise.fc(x, g, ave = mean, log = TRUE, base = 2, ...)
   \item{log}{ logical. Is the data logarithmic? }
   \item{base}{ If \code{log = TRUE}, the base which was used to compute
         the logarithms. }
+  \item{mod.fc}{ logical. Return modified fold changes? (see details) }
   \item{\dots}{ optional arguments to \code{ave}. }
 }
 \details{
@@ -22,8 +23,8 @@ pairwise.fc(x, g, ave = mean, log = TRUE, base = 2, ...)
   the group values are aggregated using the function which is 
   given by the argument \code{ave}.
 
-  The fold-changes are returned in a slightly modified form. Fold
-  changes \code{FC} which are smaller than \code{1} are reported as
+  The fold-changes are returned in a slightly modified form if mod.fc = TRUE. 
+  Fold changes \code{FC} which are smaller than \code{1} are reported as
   to \code{-1/FC}.
 
   The implementation is comparable to \code{\link[stats]{pairwise.t.test}}.
