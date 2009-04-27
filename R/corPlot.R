@@ -1,8 +1,9 @@
 ## Modifikation of function plot.cor of package "sma"
 corPlot <- function (x, new = FALSE, col, minCor = 0.5, 
-                     labels = FALSE, labcols = "black", title = "", 
+                     labels = FALSE, labcols = "black", 
+                     title = "", cex.title = 1.2, 
                      protocol = FALSE, cex.axis = 0.8, 
-                     cex.axis.bar = 1, ...){
+                     cex.axis.bar = 1, signifBar = 2, ...){
     n <- ncol(x)
     corr <- x
 
@@ -41,7 +42,7 @@ corPlot <- function (x, new = FALSE, col, minCor = 0.5,
                 cex.axis = cex.axis, col.axis = cols[i])
         }
     }
-    title(title)
+    title(title, cex.main = cex.title)
     box()
 
     x.bar <- seq(min(minCor, min(corr, na.rm = TRUE)), max(corr, na.rm = TRUE), length = length(col))
@@ -56,9 +57,9 @@ corPlot <- function (x, new = FALSE, col, minCor = 0.5,
       box()
       x.small <- seq(x.bar[1], x.bar[length(x.bar)], length = 10)
       if(minCorInd)
-        Labels <- c(signif(rev(x.small[2:10]), 2), paste("<=", signif(x.small[1], 2), sep = ""))
+        Labels <- c(signif(rev(x.small[2:10]), signifBar), paste("<=", signif(x.small[1], signifBar), sep = ""))
       else
-        Labels <- signif(rev(x.small), 2)
+        Labels <- signif(rev(x.small), signifBar)
       axis(4, at = rev(x.small), labels = Labels, las = 1, cex.axis = cex.axis.bar)
     }
 

@@ -5,12 +5,13 @@
   This function modifies a given color vector as used for heatmaps.
 }
 \usage{
-heatmapCol(data, col, lim)
+heatmapCol(data, col, lim, na.rm = TRUE)
 }
 \arguments{
   \item{data}{ matrix or data.frame; data which shall be displayed in a heatmap; ranging from negative to positive numbers. }
   \item{col}{ vector of colors used for heatmap. }
   \item{lim}{ constant colors are used for data below \code{-lim} resp. above \code{lim}. }
+  \item{na.rm}{ logical; remove \code{NA} values. }
 }
 \details{
   Colors below and above a specified value are kept constant. In addition, the colors

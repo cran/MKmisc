@@ -23,8 +23,8 @@ corDist(x, method = "pearson", diag = FALSE, upper = FALSE, abs = FALSE,
   \item{abs}{ logical, compute absolute correlation distances }
   \item{use}{ character, correponds to argument \code{use} of function 
           \code{\link[stats]{cor}} }
-  \item{...}{ further arguments to functions code{\link[robustbase]{covMcd}}
-          or code{\link[robustbase]{covOGK}}, respectively. }
+  \item{...}{ further arguments to functions \code{\link[robustbase]{covMcd}}
+          or \code{\link[robustbase]{covOGK}}, respectively. }
 }
 \details{
   The function computes the Pearson, Spearman, Kendall or Cosine sample correlation
@@ -33,7 +33,7 @@ corDist(x, method = "pearson", diag = FALSE, upper = FALSE, abs = FALSE,
   \code{\link[stats]{cor}}.
   Moreover, the function computes the minimum covariance determinant or the 
   orthogonalized Gnanadesikan-Kettenring estimator. For more details we refer to
-  functions code{\link[robustbase]{covMcd}} and code{\link[robustbase]{covOGK}},
+  functions \code{\link[robustbase]{covMcd}} and \code{\link[robustbase]{covOGK}},
   respectively.
 }
 \value{
