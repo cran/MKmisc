@@ -7,8 +7,9 @@
 }
 \usage{
 corPlot(x, new = FALSE, col, minCor, labels = FALSE, 
-          labcols = "black", title = "", protocol = FALSE, cex.axis = 0.8, 
-          cex.axis.bar = 1, ...)
+          labcols = "black", title = "", cex.title = 1.2, 
+          protocol = FALSE, cex.axis = 0.8, 
+          cex.axis.bar = 1, signifBar = 2, ...)
 }
 \arguments{
   \item{x}{ data or correlation matrix, respectively }
@@ -26,12 +27,16 @@ corPlot(x, new = FALSE, col, minCor, labels = FALSE,
                   length as \code{labels}, in which case a color is specified 
                   for the label of each column of \code{x}. }
   \item{title}{ character string, overall title for the plot. }
+  \item{cex.title}{ A numerical value giving the amount by which plotting text
+                and symbols should be magnified relative to the default;
+                cf. \code{\link[graphics]{par}}, \code{cex.main}. }
   \item{protocol}{ logical, display color bar without numbers }
   \item{cex.axis}{ The magnification to be used for axis annotation relative to the 
                          current setting of 'cex'; cf. \code{\link[graphics]{par}}.}
   \item{cex.axis.bar}{ The magnification to be used for axis annotation of the color 
                                bar relative to the current setting of 'cex'; cf. 
                                \code{\link[graphics]{par}}.}
+  \item{signifBar}{ integer indicating the precision to be used for the bar.}
   \item{\dots}{ graphical parameters may also be supplied as arguments to the
           function (see \code{\link[graphics]{par}}). For comparison purposes, 
           it is good to set \code{zlim=c(-1,1)}. }

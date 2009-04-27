@@ -4,9 +4,9 @@
 ##         ranging from negative to positive numbers
 ## col: vector of colors used for heatmap
 ## lim: constant colors are used for data below -lim resp. above lim
-heatmapCol <- function(data, col, lim){
+heatmapCol <- function(data, col, lim, na.rm = TRUE){
   nrcol <- length(col)
-  data.range <- range(data)
+  data.range <- range(data, na.rm = na.rm)
 
   if(diff(data.range) == 0)
     stop("data has range 0")
