@@ -63,7 +63,6 @@ corDist(x, method = "pearson", diag = FALSE, upper = FALSE, abs = FALSE,
 \note{
 A first version of this function appeared in package SLmisc.
 }
-\seealso{\code{\link[sma]{plot.cor}}}
 \examples{
 ## only a dummy example
 M <- cor(matrix(rnorm(1000), ncol = 20))

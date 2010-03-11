@@ -3,7 +3,7 @@
 \title{ Plot of similarity matrix based on correlation }
 \description{
   Plot of similarity matrix. This function is a slight modification of function
-  \code{plot.cor} of package \code{"sma"}.
+  \code{plot.cor} of the archived package \code{"sma"}.
 }
 \usage{
 corPlot(x, new = FALSE, col, minCor, labels = FALSE, 
@@ -62,7 +62,6 @@ corPlot(x, new = FALSE, col, minCor, labels = FALSE,
 \note{
   A first version of this function appeared in package SLmisc.
 }
-\seealso{\code{\link[sma]{plot.cor}}}
 \examples{
 ## only a dummy example
 M <- cor(matrix(rnorm(1000), ncol = 20))
