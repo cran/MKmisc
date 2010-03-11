@@ -32,7 +32,7 @@ madPlot(x, new = FALSE, col, maxMAD = 3, labels = FALSE,
 \details{
   This functions generates the so called similarity matrix (based on MAD) for 
   a microarray experiment; cf. Buness et. al. (2004). The function is similar
-  to \code{\link{corPlot}} and \code{\link[sma]{plot.cor}}, respectively.
+  to \code{\link{corPlot}}.
 }
 %\value{
 %}
@@ -51,7 +51,7 @@ madPlot(x, new = FALSE, col, maxMAD = 3, labels = FALSE,
 \note{
   A first version of this function appeared in package SLmisc.
 }
-\seealso{\code{\link[sma]{plot.cor}}, \code{corPlot}}
+\seealso{\code{corPlot}}
 \examples{
 ## only a dummy example
 M <- madMatrix(matrix(rnorm(1000), ncol = 10))

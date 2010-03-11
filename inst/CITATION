@@ -1,10 +1,18 @@
+if(!exists("meta") || is.null(meta)) meta <- packageDescription("MKmisc")
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
 citHeader("To cite package MKmisc in publications use:")
 
 citEntry(entry="Manual",
          title = "MKmisc: Miscellaneous functions from M. Kohl",
          author = personList(as.person("M. Kohl")),
          language = "English",
-         year = 2008,
+         year = year,
+         note = note,
          type = "R package",
          url = "http://www.stamats.de",
-         textVersion = paste("Kohl, M., (2008).", "MKmisc: Miscellaneous functions from M. Kohl.", "R package."))
+         textVersion = paste("Kohl, M.",
+                             sprintf("(%s).", year),
+                             "MKmisc: Miscellaneous functions from M. Kohl.",
+                             paste(note, ".", sep = "")))
