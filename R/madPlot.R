@@ -7,7 +7,7 @@ madPlot <- function (x, new = FALSE, col, maxMAD = 3, labels = FALSE,
     if(new) MAD <- madMatrix(x)
 
     if(missing(col))
-      col <- colorRampPalette(brewer.pal(8, "RdYlGn"))(128)
+      col <- rev(colorRampPalette(brewer.pal(8, "RdYlGn"))(128))
 
     if(protocol)
       layout(matrix(c(1, 2), 1, 2), width = c(10, 3))

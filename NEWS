@@ -1,0 +1,13 @@
+###############################################################################
+## NEWS to package MKmisc
+###############################################################################
+
+###########################################################
+## Version 0.7
+###########################################################
+- added NEWS file
+- modified function oneWayAnova: instead of lm and anova now oneway.test is
+  used allowing for unequal variances 
+- added functions AUC, pairwise.auc and AUC.test as well as pairwise.fun and 
+  HLgof.test
+- added NAMESPACE file

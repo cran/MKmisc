@@ -12,8 +12,8 @@ Miscellaneous Functions from M. Kohl.
 \tabular{ll}{
 Package: \tab MKmisc\cr
 Type: \tab Package\cr
-Version: \tab 0.6.1\cr
-Date: \tab 2010-03-10\cr
+Version: \tab 0.7\cr
+Date: \tab 2010-05-20\cr
 Depends: \tab R(>= 2.10.0), stats, graphics, robustbase, RColorBrewer\cr
 Suggests: \tab gplots\cr
 License: \tab LGPL-3\cr

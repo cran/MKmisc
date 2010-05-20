@@ -40,7 +40,7 @@ madPlot(x, new = FALSE, col, maxMAD = 3, labels = FALSE,
   Sandrine Dudoit, Yee Hwa (Jean) Yang, Benjamin Milo Bolstad and with 
   contributions from Natalie Thorne, Ingrid Loennstedt and Jessica Mar.
   sma: Statistical Microarray Analysis.\cr
-  http://www.stat.berkeley.edu/users/terry/zarray/Html/smacode.html
+  http://www.stat.berkeley.edu/users/terry/zarray/Software/smacode.html
   
   Andreas Buness, Wolfgang Huber, Klaus Steiner, Holger Sueltmann, and
   Annemarie Poustka. arrayMagic: two-colour cDNA microarray quality
@@ -54,7 +54,11 @@ madPlot(x, new = FALSE, col, maxMAD = 3, labels = FALSE,
 \seealso{\code{corPlot}}
 \examples{
 ## only a dummy example
-M <- madMatrix(matrix(rnorm(1000), ncol = 10))
-madPlot(M)
+set.seed(13)
+x <- matrix(rnorm(1000), ncol = 10)
+x[1:20,5] <- x[1:20,5] + 10
+madPlot(x, new = TRUE, maxMAD = 2.5)
+## in contrast
+corPlot(x, new = TRUE, minCor = -0.5)
 }
 \keyword{hplot}

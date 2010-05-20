@@ -1,15 +1,10 @@
-## compute pairwise fold changes
-pairwise.logfc <- function (x, g, ave = mean, log = TRUE, base = 2, ...) {
+## compute pairwise AUC
+pairwise.auc <- function (x, g) {
     g <- factor(g)
     compare.levels <- function(i, j) {
         xi <- x[as.integer(g) == i]
         xj <- x[as.integer(g) == j]
-        if(log){
-            logFC <- ave(xj, ...) - ave(xi, ...)
-        }else{
-            logFC <- log(ave(xj, ...)/ave(xi, ...), base = base)
-        }
-        return(logFC)
+        return(AUC(xi, xj))
     }
     ix <- seq_along(levels(g))
     names(ix) <- levels(g)
