@@ -56,7 +56,7 @@ corPlot(x, new = FALSE, col, minCor, labels = FALSE,
   Sandrine Dudoit, Yee Hwa (Jean) Yang, Benjamin Milo Bolstad and with 
   contributions from Natalie Thorne, Ingrid Loennstedt and Jessica Mar.
   sma: Statistical Microarray Analysis.\cr
-  http://www.stat.berkeley.edu/users/terry/zarray/Html/smacode.html
+  http://www.stat.berkeley.edu/users/terry/zarray/Software/smacode.html
 }
 \author{ Matthias Kohl \email{Matthias.Kohl@stamats.de}}
 \note{

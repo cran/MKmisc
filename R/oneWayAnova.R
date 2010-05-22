@@ -1,14 +1,11 @@
 ## Modification of function Anova in package genefilter
-oneWayAnova <- function(cov, na.rm = TRUE){
+oneWayAnova <- function(cov, na.rm = TRUE, var.equal = FALSE){
     function(x) {
         if (na.rm) {
             drop <- is.na(x)
             x <- x[!drop]
             cov <- cov[!drop]
         }
-        m1 <- lm(x ~ cov)
-        m2 <- lm(x ~ 1)
-        av <- anova(m2, m1)
-        return(av[["Pr(>F)"]][2])
+        oneway.test(x ~ cov, var.equal = var.equal)$p.value
     }
 }

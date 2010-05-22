@@ -1,0 +1,24 @@
+export(AUC,
+       AUC.test,
+       binomCI,
+       corDist,
+       corPlot,
+       fiveNS,
+       heatmapCol,
+       HLgof.test,
+       IQrange,
+       madMatrix,
+       madPlot,
+       oneWayAnova,
+       pairwise.auc,
+       pairwise.fc,
+       pairwise.logfc,
+       pairwise.fun,
+       qbxp.stats,
+       qboxplot,
+       qboxplot.default,
+       repMeans,
+       twoWayAnova)
+       
+S3method(qboxplot, default)
+S3method(qboxplot, formula)
