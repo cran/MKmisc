@@ -11,3 +11,10 @@
 - added functions AUC, pairwise.auc and AUC.test as well as pairwise.fun and 
   HLgof.test
 - added NAMESPACE file
+
+
+###########################################################
+## Version 0.8
+###########################################################
+- added function simPlot for plotting similarity matrices (a slight 
+  modification of function corPlot)
