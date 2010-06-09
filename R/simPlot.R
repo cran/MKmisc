@@ -1,28 +1,23 @@
-## Modifikation of function plot.cor of package "sma"
-corPlot <- function (x, new = FALSE, col, minCor = 0.5, 
-                     labels = FALSE, labcols = "black", 
-                     title = "", cex.title = 1.2, 
-                     protocol = FALSE, cex.axis = 0.8, 
-                     cex.axis.bar = 1, signifBar = 2, ...){
+## Modifikation of function corPlot of package MKmisc
+simPlot <- function (x, col, minVal = 0.5, labels = FALSE, labcols = "black", 
+                     title = "", cex.title = 1.2, protocol = FALSE, 
+                     cex.axis = 0.8, cex.axis.bar = 1, signifBar = 2, ...){
     n <- ncol(x)
-    corr <- x
+    if(nrow(x) != n) stop("nrow(x) != nrcol(x)!")
 
-    if(new) corr <- cor(x, use = "pairwise.complete.obs")
-    if(minCor < -1 | minCor > 1)
-      stop("'minCor' has to be in [-1, 1]")
     if(missing(col))
       col <- colorRampPalette(brewer.pal(8, "RdYlGn"))(128)
 
     layout(matrix(c(1, 2), 1, 2), width = c(10, 3))
-    if(min(corr) >= minCor){
-      col.nr <- trunc((round(min(corr), 2) - minCor)/(1-minCor)*length(col))
-      minCorInd <- FALSE
+    if(min(x) >= minVal){
+      col.nr <- trunc((round(min(x), 2) - minVal)/(1-minVal)*length(col))
+      minValInd <- FALSE
     }else{ 
       col.nr <- 1
-      corr[corr < minCor] <- minCor
-      minCorInd <- TRUE
+      x[x < minVal] <- minVal
+      minValInd <- TRUE
     }
-    image(1:n, 1:n, corr[, n:1], col = col[col.nr:length(col)], axes = FALSE, 
+    image(1:n, 1:n, x[, n:1], col = col[col.nr:length(col)], axes = FALSE, 
           xlab = "sample index", ylab = "", ...)
 
     if (length(labcols) == 1) {
@@ -45,7 +40,7 @@ corPlot <- function (x, new = FALSE, col, minCor = 0.5,
     title(title, cex.main = cex.title)
     box()
 
-    x.bar <- seq(min(minCor, min(corr, na.rm = TRUE)), max(corr, na.rm = TRUE), length = length(col))
+    x.bar <- seq(min(minVal, min(x, na.rm = TRUE)), max(x, na.rm = TRUE), length = length(col))
     x.small <- seq(x.bar[1], x.bar[length(x.bar)], length = 10)
     par(mar = c(5.1, 1, 4.1, 5))
     if(protocol){
@@ -56,7 +51,7 @@ corPlot <- function (x, new = FALSE, col, minCor = 0.5,
       image(1, x.bar, matrix(x.bar, 1, length(x.bar)), axes = FALSE, xlab = "", ylab = "", col = col, ...)
       box()
       x.small <- seq(x.bar[1], x.bar[length(x.bar)], length = 10)
-      if(minCorInd)
+      if(minValInd)
         Labels <- c(signif(rev(x.small[2:10]), signifBar), paste("<=", signif(x.small[1], signifBar), sep = ""))
       else
         Labels <- signif(rev(x.small), signifBar)
