@@ -43,7 +43,7 @@ HLgof.test <- function (fit, obs, ngr = 10, X, verbose = FALSE){
 
     if(!missing(X)){
         ## le Cessie-van Houwelingen-Copas-Hosmer unweighted sum of squares test for global goodness of fit
-        X <- cbind(1, X)
+#        X <- cbind(1, X)
         y <- obs == 1
         p <- fit
         sse <- sum((y - p)^2)

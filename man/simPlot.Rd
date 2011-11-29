@@ -5,7 +5,7 @@
   Plot of similarity matrix. 
 }
 \usage{
-simPlot(x, col, minVal, labels = FALSE, 
+simPlot(x, col, minVal, labels = FALSE, lab.both.axes = FALSE, 
           labcols = "black", title = "", cex.title = 1.2, 
           protocol = FALSE, cex.axis = 0.8, 
           cex.axis.bar = 1, signifBar = 2, ...)
@@ -17,6 +17,7 @@ simPlot(x, col, minVal, labels = FALSE,
   \item{minVal}{ numeric, minimum value which is display by a color; used to adjust \code{col}}
   \item{labels}{ vector of character strings to be placed at the tickpoints,
           labels for the columns of \code{x}. }
+  \item{lab.both.axes}{ logical, display labels on both axes }
   \item{labcols}{ colors to be used for the labels of the columns of \code{x}.
                   \code{labcols} can have either length 1, in which case all 
                   the labels are displayed using the same color, or the same 
@@ -58,7 +59,13 @@ simPlot(x, col, minVal, labels = FALSE,
 }
 \examples{
 ## only a dummy example
-M <- cor(matrix(rnorm(1000), ncol = 20))
-simPlot(M, minCor = min(M))
+M <- matrix(rnorm(1000), ncol = 20)
+colnames(M) <- paste("Sample", 1:20)
+M.cor <- cor(M)
+
+simPlot(M.cor, minCor = min(M.cor))
+simPlot(M.cor, minCor = min(M.cor), lab.both.axes = TRUE)
+simPlot(M.cor, minCor = min(M.cor), protocol = TRUE)
+simPlot(M.cor, minCor = min(M.cor), signifBar = 1)
 }
 \keyword{univar}

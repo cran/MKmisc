@@ -28,10 +28,10 @@ HLgof.test(fit, obs, ngr = 10, X, verbose = FALSE)
   unweighted sum of squares test for global goodness of fit is additionally 
   determined; see Hosmer et al. (1997).
   A more general version of this test is implemented in function 
-  \code{\link[Design]{residuals.lrm}} in package \pkg{Design}.
+  \code{\link[rms]{residuals.lrm}} in package \pkg{rms}.
 }
 \value{
-  A list of tests.
+  A list of test results.
 }
 \references{
   S. Lemeshow and D.W. Hosmer (1982). A review of goodness of fit statistics
@@ -43,13 +43,14 @@ HLgof.test(fit, obs, ngr = 10, X, verbose = FALSE)
   \emph{Statistics in Medicine}, \bold{16}, 965-980.
 }
 \author{ Matthias Kohl \email{Matthias.Kohl@stamats.de}}
-\seealso{ \code{\link[Design]{residuals.lrm}} }
+\seealso{ \code{\link[rms]{residuals.lrm}} }
 \examples{
 set.seed(111)
 x1 <- factor(sample(1:3, 50, replace = TRUE))
 x2 <- rnorm(50)
 obs <- sample(c(0,1), 50, replace = TRUE)
 fit <- glm(obs ~ x1+x2, family = binomial)
-HLgof.test(fit = fitted(fit), obs = obs, X = cbind(x1, x2))
+HLgof.test(fit = fitted(fit), obs = obs)
+HLgof.test(fit = fitted(fit), obs = obs, X = model.matrix(obs ~ x1+x2))
 }
 \keyword{univar}

@@ -37,7 +37,7 @@ corDist(x, method = "pearson", diag = FALSE, upper = FALSE, abs = FALSE,
   respectively.
 }
 \value{
-  'corDist' returns an object of class \code{"dist"}; cf. \code{\link[stats]{dist}}.
+  \code{corDist} returns an object of class \code{"dist"}; cf. \code{\link[stats]{dist}}.
 }
 \references{ 
   Gentleman R. Ding B., Dudoit S. and Ibrahim J. (2005). Distance Measures in DNA 

@@ -1,5 +1,6 @@
 ## Modifikation of function corPlot of package MKmisc
-simPlot <- function (x, col, minVal = 0.5, labels = FALSE, labcols = "black", 
+simPlot <- function (x, col, minVal = 0.5, labels = FALSE, 
+                     lab.both.axes = FALSE, labcols = "black", 
                      title = "", cex.title = 1.2, protocol = FALSE, 
                      cex.axis = 0.8, cex.axis.bar = 1, signifBar = 2, ...){
     n <- ncol(x)
@@ -17,9 +18,13 @@ simPlot <- function (x, col, minVal = 0.5, labels = FALSE, labcols = "black",
       x[x < minVal] <- minVal
       minValInd <- TRUE
     }
-    image(1:n, 1:n, x[, n:1], col = col[col.nr:length(col)], axes = FALSE, 
-          xlab = "sample index", ylab = "", ...)
-
+    if(lab.both.axes)
+        image(1:n, 1:n, x[, n:1], col = col[col.nr:length(col)], 
+            axes = FALSE, xlab = "", ylab = "", ...)
+     else
+        image(1:n, 1:n, x[, n:1], col = col[col.nr:length(col)], 
+            axes = FALSE, xlab = "sample index", ylab = "", ...)
+    
     if (length(labcols) == 1) {
         axis(2, at = n:1, labels = labels, las = 2, cex.axis = cex.axis,
             col.axis = labcols)
@@ -33,8 +38,12 @@ simPlot <- function (x, col, minVal = 0.5, labels = FALSE, labcols = "black",
             which <- (1:n)[labcols == cols[i]]
             axis(2, at = (n:1)[which], labels = labels[which],
                 las = 2, cex.axis = cex.axis, col.axis = cols[i])
-            axis(1, at = which, labels = (1:n)[which], las = 2,
-                cex.axis = cex.axis, col.axis = cols[i])
+            if(lab.both.axes)
+                axis(1, at = which, labels = labels[which], las = 2, 
+                    cex.axis = cex.axis, col.axis = cols[i])
+            else
+                axis(1, at = which, labels = (1:n)[which], las = 2, 
+                    cex.axis = cex.axis, col.axis = cols[i])
         }
     }
     title(title, cex.main = cex.title)
