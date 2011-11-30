@@ -18,3 +18,14 @@
 ###########################################################
 - added function simPlot for plotting similarity matrices (a slight 
   modification of function corPlot)
+
+
+###########################################################
+## Version 0.9
+###########################################################
+- extended simPlot and corPlot by argument "lab.both.axes" which also to add 
+  labels on both axes (a request by Sunghee OH).
+- example to HLgof.test was wrong as pointed out by Dan O'Shea. This was 
+  corrected and the function slightly modified (intercept is no longer added
+  inside of HLgof.test for the le Cessie-van Houwelingen-Copas-Hosmer 
+  unweighted sum of squares test for global goodness of fit)

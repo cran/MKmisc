@@ -6,8 +6,9 @@
   \code{plot.cor} of the archived package \code{"sma"}.
 }
 \usage{
-corPlot(x, new = FALSE, col, minCor, labels = FALSE, 
-          labcols = "black", title = "", cex.title = 1.2, 
+corPlot(x, new = FALSE, col, minCor, 
+          labels = FALSE, lab.both.axes = FALSE, labcols = "black", 
+          title = "", cex.title = 1.2, 
           protocol = FALSE, cex.axis = 0.8, 
           cex.axis.bar = 1, signifBar = 2, ...)
 }
@@ -21,6 +22,7 @@ corPlot(x, new = FALSE, col, minCor, labels = FALSE,
   \item{minCor}{numeric value in [-1,1], used to adjust \code{col}}
   \item{labels}{ vector of character strings to be placed at the tickpoints,
           labels for the columns of \code{x}. }
+  \item{lab.both.axes}{ logical, display labels on both axes }
   \item{labcols}{ colors to be used for the labels of the columns of \code{x}.
                   \code{labcols} can have either length 1, in which case all 
                   the labels are displayed using the same color, or the same 
@@ -64,7 +66,13 @@ corPlot(x, new = FALSE, col, minCor, labels = FALSE,
 }
 \examples{
 ## only a dummy example
-M <- cor(matrix(rnorm(1000), ncol = 20))
-corPlot(M, minCor = min(M))
+M <- matrix(rnorm(1000), ncol = 20)
+colnames(M) <- paste("Sample", 1:20)
+M.cor <- cor(M)
+
+corPlot(M.cor, minCor = min(M.cor))
+corPlot(M.cor, minCor = min(M.cor), lab.both.axes = TRUE)
+corPlot(M.cor, minCor = min(M.cor), protocol = TRUE)
+corPlot(M.cor, minCor = min(M.cor), signifBar = 1)
 }
 \keyword{univar}
