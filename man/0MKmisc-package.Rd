@@ -12,9 +12,9 @@ Miscellaneous Functions from M. Kohl.
 \tabular{ll}{
 Package: \tab MKmisc\cr
 Type: \tab Package\cr
-Version: \tab 0.8\cr
-Date: \tab 2010-06-09\cr
-Depends: \tab R(>= 2.11.0), stats, graphics, robustbase, RColorBrewer\cr
+Version: \tab 0.91\cr
+Date: \tab 2012-04-13\cr
+Depends: \tab R(>= 2.14.0), stats, graphics, robustbase, RColorBrewer\cr
 Suggests: \tab gplots\cr
 License: \tab LGPL-3\cr
 URL: \tab http://www.stamats.de/\cr

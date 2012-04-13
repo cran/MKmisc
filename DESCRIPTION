@@ -1,15 +1,15 @@
 Package: MKmisc
 Type: Package
 Title: Miscellaneous Functions from M. Kohl
-Version: 0.9
-Date: 2011-11-29
+Version: 0.91
+Date: 2012-04-13
 Author: Matthias Kohl
 Maintainer: Matthias Kohl <Matthias.Kohl@stamats.de>
 Description: Miscellaneous Functions from M. Kohl
-Depends: R(>= 2.11.0), stats, graphics, robustbase, RColorBrewer
+Depends: R(>= 2.14.0), stats, graphics, robustbase, RColorBrewer
 Suggests: gplots
 License: LGPL-3
 URL: http://www.stamats.de/
-Packaged: 2011-11-29 22:46:43 UTC; kohlm
+Packaged: 2012-04-13 05:07:17 UTC; kohlm
 Repository: CRAN
-Date/Publication: 2011-11-30 08:21:54
+Date/Publication: 2012-04-13 20:18:08

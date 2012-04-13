@@ -44,7 +44,7 @@ AUC.test <- function(pred1, lab1, pred2, lab2, conf.level = 0.95, paired = FALSE
     
     zstat <- (auc1-auc2)/sed
     names(zstat) <- "z"
-    pval <- 2*pnorm(abs(zstat), lower = FALSE)
+    pval <- 2*pnorm(abs(zstat), lower.tail = FALSE)
     estimate <- auc1-auc2
     names(estimate) <- "Difference in AUC"
     cint <- estimate + c(-cint, cint)*sed

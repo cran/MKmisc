@@ -9,7 +9,7 @@ simPlot <- function (x, col, minVal = 0.5, labels = FALSE,
     if(missing(col))
       col <- colorRampPalette(brewer.pal(8, "RdYlGn"))(128)
 
-    layout(matrix(c(1, 2), 1, 2), width = c(10, 3))
+    layout(matrix(c(1, 2), 1, 2), widths = c(10, 3))
     if(min(x) >= minVal){
       col.nr <- trunc((round(min(x), 2) - minVal)/(1-minVal)*length(col))
       minValInd <- FALSE

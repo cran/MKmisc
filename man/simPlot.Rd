@@ -63,9 +63,9 @@ M <- matrix(rnorm(1000), ncol = 20)
 colnames(M) <- paste("Sample", 1:20)
 M.cor <- cor(M)
 
-simPlot(M.cor, minCor = min(M.cor))
-simPlot(M.cor, minCor = min(M.cor), lab.both.axes = TRUE)
-simPlot(M.cor, minCor = min(M.cor), protocol = TRUE)
-simPlot(M.cor, minCor = min(M.cor), signifBar = 1)
+simPlot(M.cor, minVal = min(M.cor))
+simPlot(M.cor, minVal = min(M.cor), lab.both.axes = TRUE)
+simPlot(M.cor, minVal = min(M.cor), protocol = TRUE)
+simPlot(M.cor, minVal = min(M.cor), signifBar = 1)
 }
 \keyword{univar}
