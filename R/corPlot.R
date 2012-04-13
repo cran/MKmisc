@@ -10,7 +10,7 @@ corPlot <- function (x, new = FALSE, col, minCor = 0.5, labels = FALSE, lab.both
         stop("'minCor' has to be in [-1, 1]")
     if (missing(col)) 
         col <- colorRampPalette(brewer.pal(8, "RdYlGn"))(128)
-    layout(matrix(c(1, 2), 1, 2), width = c(10, 3))
+    layout(matrix(c(1, 2), 1, 2), widths = c(10, 3))
     if (min(corr) >= minCor) {
         col.nr <- trunc((round(min(corr), 2) - minCor)/(1 - minCor) * 
             length(col))

@@ -10,9 +10,9 @@ madPlot <- function (x, new = FALSE, col, maxMAD = 3, labels = FALSE,
       col <- rev(colorRampPalette(brewer.pal(8, "RdYlGn"))(128))
 
     if(protocol)
-      layout(matrix(c(1, 2), 1, 2), width = c(10, 3))
+      layout(matrix(c(1, 2), 1, 2), widths = c(10, 3))
     else
-      layout(matrix(c(1, 2), 1, 2), width = c(10, 2.5))
+      layout(matrix(c(1, 2), 1, 2), widths = c(10, 2.5))
     if(max(MAD) < maxMAD) 
       col.nr <- trunc(round(max(MAD), 2)/maxMAD*length(col))
     else 

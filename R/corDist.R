@@ -51,7 +51,7 @@ corDist <- function (x, method = "pearson", diag = FALSE, upper = FALSE,
     }
     d <- d[lower.tri(d)]
     attr(d, "Size") <- N
-    attr(d, "Labels") <- dimnames(x)[[1]]
+    attr(d, "Labels") <- dimnames(x)[[1L]]
     attr(d, "Diag") <- diag
     attr(d, "Upper") <- upper
     attr(d, "method") <- METHODS[method]

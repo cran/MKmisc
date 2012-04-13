@@ -55,7 +55,7 @@ HLgof.test <- function (fit, obs, ngr = 10, X, verbose = FALSE){
         ev <- sum(wt)
         z <- (sse - ev)/sd
         names(z) <- "z"
-        P2 <- 2 * pnorm(abs(z), lower = FALSE)
+        P2 <- 2 * pnorm(abs(z), lower.tail = FALSE)
         stats <- c(sse, ev, sd, z, P)
         names(stats) <- c("Sum of squared errors", "Expected value|H0", 
                           "SD", "Z", "P")

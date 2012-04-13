@@ -3,21 +3,10 @@
 ###############################################################################
 
 ###########################################################
-## Version 0.7
+## Version 0.9.1
 ###########################################################
-- added NEWS file
-- modified function oneWayAnova: instead of lm and anova now oneway.test is
-  used allowing for unequal variances 
-- added functions AUC, pairwise.auc and AUC.test as well as pairwise.fun and 
-  HLgof.test
-- added NAMESPACE file
-
-
-###########################################################
-## Version 0.8
-###########################################################
-- added function simPlot for plotting similarity matrices (a slight 
-  modification of function corPlot)
+- added function stringDist to compute Hamming and Levenshtein distance of two
+  strings (sequences)
 
 
 ###########################################################
@@ -29,3 +18,22 @@
   corrected and the function slightly modified (intercept is no longer added
   inside of HLgof.test for the le Cessie-van Houwelingen-Copas-Hosmer 
   unweighted sum of squares test for global goodness of fit)
+
+
+###########################################################
+## Version 0.8
+###########################################################
+- added function simPlot for plotting similarity matrices (a slight 
+  modification of function corPlot)
+
+
+###########################################################
+## Version 0.7
+###########################################################
+- added NEWS file
+- modified function oneWayAnova: instead of lm and anova now oneway.test is
+  used allowing for unequal variances 
+- added functions AUC, pairwise.auc and AUC.test as well as pairwise.fun and 
+  HLgof.test
+- added NAMESPACE file
+
