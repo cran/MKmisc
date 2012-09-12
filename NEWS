@@ -3,7 +3,15 @@
 ###############################################################################
 
 ###########################################################
-## Version 0.9.1
+## Version 0.92
+###########################################################
+- added an additional Parameter to function AUC, which can be used to suppress
+  switching of the AUC values from x to 1-x if x < 0.5 
+  (a request by Yuta Tanoue)
+
+
+###########################################################
+## Version 0.91
 ###########################################################
 - added function stringDist to compute Hamming and Levenshtein distance of two
   strings (sequences)

@@ -1,7 +1,7 @@
-d88e00313b7a573f38d82b6e03338f9c *DESCRIPTION
+18b301c41ccfd80801d67cd79ba1d627 *DESCRIPTION
 231fa8b5ddddbab6f34d72a0e5e3034c *NAMESPACE
-eaaba2ff678aa565149f69b95fd70c35 *NEWS
-8e2821707ebc987c35c45cdcaa5b17db *R/AUC.R
+58e9467663d8eaef4d0ce5f52ba7fe43 *NEWS
+3cc9e635a3ec8e6cce1202f37acff57b *R/AUC.R
 309c28eb1c3cd81f965247e58446e105 *R/AUCtest.R
 7dec7c3d736543930ee2fef65b009fd5 *R/HLgofTest.R
 329ab772a72e92fa43d993298e5add06 *R/IQrange.R
@@ -23,8 +23,8 @@ eb480ad28bf40a1460a5cced6aa32477 *R/qboxplot.R
 a08307396f40e0df010f10adcf48d134 *R/stringDist.R
 594e0884c2c6a887945d33a02df682c3 *R/twoWayAnova.R
 1a28bf78d6c8599c8a5e182b6296dd71 *inst/CITATION
-7a1cd871a55c78a9ab73f74b581a032f *man/0MKmisc-package.Rd
-58e6ad53804ce624bde4781da39698bf *man/AUC.Rd
+2cad4706b0935f2ff746ae1b7eeceadc *man/0MKmisc-package.Rd
+b5d10b73a5bfbd996b8d66b2fe33a82a *man/AUC.Rd
 211bad071975101c71fa5f5615507360 *man/AUCtest.Rd
 81061fdfb22a4f7ab17d023fd2d1e4ae *man/HLgofTest.Rd
 2b795fecb747cabe6e9fffc12bba0c7b *man/IQrange.Rd

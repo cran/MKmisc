@@ -1,5 +1,5 @@
 ## compute AUC
-AUC <- function(x, y, group){
+AUC <- function(x, y, group, switchAUC = TRUE){
     if(missing(y) && missing(group)){
         stop("'y' or 'group' must be specified!")
     }
@@ -16,8 +16,11 @@ AUC <- function(x, y, group){
     nx <- length(x)
     ny <- length(y)
     AUC <- (nx*ny + nx*(nx+1)/2 - sum(rank(c(x,y))[1:nx]))/(nx*ny)
-    if(AUC < 0.5) 
+    if(AUC < 0.5 & switchAUC){
+	dig <- getOption("digits")
+	warning("The computed AUC value ", round(AUC, dig), " will be replaced by ", 
+		round(1-AUC, dig),  " which can be achieved be interchanging the sample labels!")
         return(1-AUC)
-    else
+    }else
         return(AUC)
 }
