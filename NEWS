@@ -3,6 +3,14 @@
 ###############################################################################
 
 ###########################################################
+## Version 0.93
+###########################################################
+- added function power.diagnostic.test to compute power resp. sample size
+  for a diagnostic test by approach of Flahault et al. (2005) incorporating
+  the correction of Chu and Cole (2007)
+
+
+###########################################################
 ## Version 0.92
 ###########################################################
 - added an additional Parameter to function AUC, which can be used to suppress
