@@ -24,22 +24,26 @@ stringDist(x, y, method = "levenshtein", mismatch = 1, gap = 1)
   
   In case of the Levenshtein (edit) distance a scoring and a trace-back matrix are computed
   and are saved as attributes \code{"ScoringMatrix"} and \code{"TraceBackMatrix"}. 
-  The numbers in the trace-back matrix reflect insertion of a gap in sting \code{y} (1), 
-  match/missmatch (2), and insertion of a gap in string \code{x} (3).
+  The characters in the trace-back matrix reflect insertion of a gap in string \code{y} 
+  (\code{d}: deletion), match (\code{m}), mismatch (\code{mm}), 
+  and insertion of a gap in string \code{x} (\code{i}).
 }
 \value{
-  \code{stringDist} returns an object of class \code{"dist"}; cf. \code{\link[stats]{dist}}.
+  \code{stringDist} returns an object of S3 class \code{"stringDist"} inherited 
+  from class \code{"dist"}; cf. \code{\link[stats]{dist}}.
 }
 \references{
   R. Merkl and S. Waack (2009). Bioinformatik Interaktiv. Wiley.
 }
 \author{Matthias Kohl \email{Matthias.Kohl@stamats.de} }
 \note{
-  For distances between strings and for string alignments see also Bioconductor package
-  \code{"Biostrings"}
+  The function is mainly for teaching purposes.
+  
+  For distances between strings and string alignments see also Bioconductor package
+  \pkg{Biostrings}.
 }
 
-\seealso{ \code{\link[stats]{dist}} }
+\seealso{ \code{\link[stats]{dist}}, \code{\link{stringSim}} }
 \examples{
 x <- "GACGGATTATG"
 y <- "GATCGGAATAG"

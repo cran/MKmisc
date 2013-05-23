@@ -3,6 +3,17 @@
 ###############################################################################
 
 ###########################################################
+## Version 0.94
+###########################################################
+- added function stringSim to compute optimal global and local alignment scores
+  (Needleman-Wunsch and Smith-Waterman algorithm with constant gap penalties)
+- added function traceBack to compute an optimal alignment based on the
+  trace back matrix included in objects of class stringDist or stringSim
+- corrected bug in function stringDist: wrong initialisation for Levenshtein
+  distance
+
+
+###########################################################
 ## Version 0.93
 ###########################################################
 - added function power.diagnostic.test to compute power resp. sample size

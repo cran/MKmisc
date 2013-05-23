@@ -37,8 +37,10 @@ data.plot[71:100, 1:30] <- rnorm(900, sd = 1.2)
 nrcol <- 128
 require(gplots)
 require(RColorBrewer)
-heatmap.2(data.plot, col =  rev(colorRampPalette(brewer.pal(10, "RdBu"))(nrcol)), trace = "none", tracecol = "black")
-farbe <- heatmapCol(data = data.plot, col =  rev(colorRampPalette(brewer.pal(10, "RdBu"))(nrcol)), lim = min(abs(range(data.plot)))-1)
+myCol <- rev(colorRampPalette(brewer.pal(10, "RdBu"))(nrcol))
+heatmap.2(data.plot, col =  myCol, trace = "none", tracecol = "black")
+farbe <- heatmapCol(data = data.plot, col = myCol, 
+                    lim = min(abs(range(data.plot)))-1)
 heatmap.2(data.plot, col = farbe, trace = "none", tracecol = "black")
 }
 \keyword{hplot}
