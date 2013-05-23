@@ -27,17 +27,24 @@ stringDist <- function (x, y, method = "levenshtein", mismatch = 1, gap = 1){
         m <- length(x1)
         n <- length(y1)
         D <- matrix(NA, nrow = m+1, ncol = n+1)
-        D[,1] <- gap
-        D[1,] <- gap
+        M <- matrix("", nrow = m+1, ncol = n+1)
+        D[,1] <- seq_len(m+1)*gap-1
+        D[1,] <- seq_len(n+1)*gap-1
         D[1,1] <- 0
-        M <- D
+        M[,1] <- "d"
+        M[1,] <- "i"
+        M[1,1] <- "start"
+        text <- c("d", "m", "i")
         for(i in c(2:(m+1))){
             for(j in c(2:(n+1))){
                 m1 <- D[i-1,j] + gap
                 m2 <- D[i-1,j-1] + (x1[i-1] != y1[j-1])*mismatch
                 m3 <- D[i,j-1] + gap
                 D[i,j] <- min(m1, m2, m3)
-                M[i,j] <- which.min(c(m1, m2, m3))
+                wmin <- text[which(c(m1, m2, m3) == D[i,j])]
+                if("m" %in% wmin & x1[i-1] != y1[j-1])
+                  wmin[wmin == "m"] <- "mm"
+                M[i,j] <- paste(wmin, collapse = "/")
             }
         }
         rownames(M) <- rownames(D) <- c("gap", x1)
@@ -61,7 +68,7 @@ stringDist <- function (x, y, method = "levenshtein", mismatch = 1, gap = 1){
     attr(d, "call") <- match.call()
     attr(d, "ScoringMatrix") <- D
     attr(d, "TraceBackMatrix") <- M
-    class(d) <- "dist"
+    class(d) <- c("stringDist", "dist")
 
     return(d)
 }
