@@ -35,6 +35,7 @@ data.plot[71:100, 31:50] <- data.plot[71:100, 31:50] - 1.4
 data.plot[1:70, 31:50] <- rnorm(1400, sd = 1.2)
 data.plot[71:100, 1:30] <- rnorm(900, sd = 1.2)
 nrcol <- 128
+
 require(gplots)
 require(RColorBrewer)
 myCol <- rev(colorRampPalette(brewer.pal(10, "RdBu"))(nrcol))

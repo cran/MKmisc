@@ -3,6 +3,15 @@
 ###############################################################################
 
 ###########################################################
+## Version 0.95
+###########################################################
+- added functions quantileCI and medianCI to compute confidence intervals
+  for quantiles
+- moved RColorBrewer and robustbase from Depends to Imports
+- corrected some minor bugs in traceBack and corDist
+
+
+###########################################################
 ## Version 0.94
 ###########################################################
 - added function stringSim to compute optimal global and local alignment scores

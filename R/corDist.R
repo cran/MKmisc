@@ -45,9 +45,9 @@ corDist <- function (x, method = "pearson", diag = FALSE, upper = FALSE,
     }
     if(method == 6){ ## Orthogonalized Gnanadesikan-Kettenring
       if(!abs)
-        d <- 1 - covMcd(t(x), cor = TRUE, ...)[["cor"]]
+        d <- 1 - covOGK(t(x), cor = TRUE, ...)[["cor"]]
       else
-        d <- 1 - abs(covMcd(t(x), cor = TRUE, ...)[["cor"]])
+        d <- 1 - abs(covOGK(t(x), cor = TRUE, ...)[["cor"]])
     }
     d <- d[lower.tri(d)]
     attr(d, "Size") <- N

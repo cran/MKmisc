@@ -1,4 +1,8 @@
-export(power.diagnostic.test,
+import("RColorBrewer")
+importFrom("robustbase", "covMcd", "covOGK")
+export(quantileCI,
+       medianCI,
+       power.diagnostic.test,
        AUC,
        AUC.test,
        binomCI,

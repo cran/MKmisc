@@ -20,7 +20,7 @@ stringSim(x, y, global = TRUE, match = 1, mismatch = -1, gap = -1, minSim = 0)
   The function computes optimal alignment scores for global (Needleman-Wunsch) 
   and local (Smith-Waterman) alignments with constant gap penalties. 
   
-  Scoring and a trace-back matrix are computed and saved as attributes 
+  Scoring and trace-back matrix are computed and saved in form of attributes 
   \code{"ScoringMatrix"} and \code{"TraceBackMatrix"}. 
   The characters in the trace-back matrix reflect insertion of a gap in 
   string \code{y} (\code{d}: deletion), match (\code{m}), mismatch (\code{mm}), 
