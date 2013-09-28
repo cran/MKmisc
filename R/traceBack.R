@@ -45,9 +45,9 @@ traceBack <- function(D, global = TRUE){
   }
   res <- rbind(paste(x, collapse = ""), paste(y, collapse = ""))
   rownames(res) <- c("x'", "y'")
-  if(local)
-    colnames(res) <- c("pairwise local alignment")
-  else
+  if(global)
     colnames(res) <- c("pairwise global alignment")
+  else
+    colnames(res) <- c("pairwise local alignment")
   res
 }

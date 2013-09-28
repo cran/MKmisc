@@ -94,7 +94,6 @@ qboxplot.formula <- function(formula, data = NULL, ..., subset, na.action = NULL
     m$... <- NULL
     m$na.action <- na.action
     m$type <- NULL
-    require(stats, quietly = TRUE)
     m[[1]] <- as.name("model.frame")
     mf <- eval(m, parent.frame())
     response <- attr(attr(mf, "terms"), "response")

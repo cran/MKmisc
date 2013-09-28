@@ -1,6 +1,5 @@
 \name{power.diagnostic.test}
 \alias{power.diagnostic.test}
-\encoding{UTF-8}
 \title{Power calculations for a diagnostic test}
 \usage{
 power.diagnostic.test(sens = NULL, spec = NULL,
@@ -62,7 +61,7 @@ power.diagnostic.test(sens = NULL, spec = NULL,
 
   H. Chu and S.R. Cole (2007). Sample size calculation using exact methods 
   in diagnostic test studies. 
-  \emph{Journal of Clinical Epidemiology}, \bold{60}(11):1201 – 1202.
+  \emph{Journal of Clinical Epidemiology}, \bold{60}(11):1201-1202.
   
   M.R. Chernick amd C.Y. Liu (2002). The saw-toothed behavior of power versus 
   sample size and software solutions: single binomial proportion using 
@@ -89,9 +88,11 @@ power.diagnostic.test(sens = 0.98, delta = 0.11, power = 0.95) # 58
 
 ## see page 1201 of Chu and Cole (2007)
 power.diagnostic.test(sens = 0.95, delta = 0.1, n = 93) ## 0.957
-power.diagnostic.test(sens = 0.95, delta = 0.1, n = 93, power = 0.95, sig.level = NULL) ## 0.0496
+power.diagnostic.test(sens = 0.95, delta = 0.1, n = 93, power = 0.95, 
+                      sig.level = NULL) ## 0.0496
 power.diagnostic.test(sens = 0.95, delta = 0.1, n = 102) ## 0.968
-power.diagnostic.test(sens = 0.95, delta = 0.1, n = 102, power = 0.95, sig.level = NULL) ## 0.0471
+power.diagnostic.test(sens = 0.95, delta = 0.1, n = 102, power = 0.95, 
+                      sig.level = NULL) ## 0.0471
 ## yields 102 not 93!
 power.diagnostic.test(sens = 0.95, delta = 0.1, power = 0.95)
 }

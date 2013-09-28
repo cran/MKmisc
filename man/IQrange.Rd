@@ -13,11 +13,10 @@ IQrange(x, na.rm = FALSE, type = 7)
 }
 \details{
   This function computes quartiles as \code{IQR(x) = quantile(x,3/4) - quantile(x,1/4)}.
-  In contrast to \code{\link[stats]{IQR}} the argument \code{type} is added and
-  can be used to select between different algorithms for the computation
-  of quantiles. The default \code{type = 7} corresponds to the setting used
-  in case of \code{\link[stats]{IQR}}.
-
+  The function is identical to function \code{\link[stats]{IQR}}. It was added
+  before the \code{type} argument was introduced to function \code{\link[stats]{IQR}}
+  in 2010 (r53643, r53644).
+  
   For normally \eqn{N(m,1)} distributed \eqn{X}, the expected value of
   \code{IQR(X)} is \code{2*qnorm(3/4) = 1.3490}, i.e., for a normal-consistent
   estimate of the standard deviation, use \code{IQR(x) / 1.349}.
