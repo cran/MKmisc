@@ -22,6 +22,8 @@ binomCI <- function(x, n, conf.level = 0.95, method = "wilson", rand = 123){
     if(conf.level < 0.5 | conf.level > 1)
         stop("'conf.level' has to be in [0.5, 1]")
 
+    x <- as.integer(x)
+    n <- as.integer(n)
     alpha <- 1 - conf.level
     kappa <- qnorm(1-alpha/2)
     p.hat <- x/n
@@ -77,18 +79,18 @@ binomCI <- function(x, n, conf.level = 0.95, method = "wilson", rand = 123){
     }
     if(method == 6){ # modified jeffreys
         est <- p.hat
-        if(x == 0)
-            CI.lower <- 1 - (alpha/2)^(1/n)
+        if(x == n)
+            CI.lower <- (alpha/2)^(1/n)
         else{
-            if(x == 1)
+            if(x <= 1)
                 CI.lower <- 0
             else
                 CI.lower <- qbeta(alpha/2, x+0.5, n-x+0.5)
         }
-        if(x == n)
-            CI.upper <- (alpha/2)^(1/n)
+        if(x == 0)
+            CI.upper <- 1 - (alpha/2)^(1/n)
         else{
-            if(x == n-1)
+            if(x >= n-1)
                 CI.upper <- 1
             else
                 CI.upper <- qbeta(1-alpha/2, x+0.5, n-x+0.5)

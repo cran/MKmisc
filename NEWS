@@ -3,6 +3,13 @@
 ###############################################################################
 
 ###########################################################
+## Version 0.96
+###########################################################
+- corrected a bug identified by Steven Kern in the modified Jeffreys interval
+  for binomial proportions.
+
+
+###########################################################
 ## Version 0.95
 ###########################################################
 - added functions quantileCI and medianCI to compute confidence intervals
