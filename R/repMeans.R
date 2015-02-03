@@ -1,7 +1,3 @@
-################################################################################
-## Funktion zur Mittelung �ber die Replikationen innerhalb
-## der Arrays unter Ber�cksichtigung der Qualit�t der Spots (flags)
-################################################################################
 ## x: matrix or data.frame with expression data
 ## flags: matrix or data.frame with spot flags
 ## use.flags: should flags be respected and in which way

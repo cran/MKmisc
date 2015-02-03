@@ -12,15 +12,15 @@ Miscellaneous Functions from M. Kohl.
 \tabular{ll}{
 Package: \tab MKmisc\cr
 Type: \tab Package\cr
-Version: \tab 0.95\cr
-Date: \tab 2013-09-28\cr
+Version: \tab 0.97\cr
+Date: \tab 2015-02-03\cr
 Depends: \tab R(>= 2.14.0), stats, graphics\cr
 Imports: \tab RColorBrewer, robustbase\cr
 Suggests: \tab gplots\cr
 License: \tab LGPL-3\cr
 URL: \tab http://www.stamats.de/\cr
 }
-require(MKmisc)
+library(MKmisc)
 }
 \author{ Matthias Kohl \url{http://www.stamats.de}
 

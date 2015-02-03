@@ -1,19 +1,23 @@
 \name{quantileCI}
 \alias{quantileCI}
 \alias{medianCI}
-\title{ Confidence Intervals for Binomial Proportions }
+\title{ Confidence Intervals for Quantiles }
 \description{
-  This functions can be used to compute confidence intervals for binomial proportions. 
+  This functions can be used to compute confidence intervals for quantiles
+  (including median). 
 }
 \usage{
-quantileCI(x, prob = 0.5, conf.level = 0.95, method = "exact", na.rm = FALSE)
-medianCI(x, conf.level = 0.95, method = "exact", na.rm = FALSE)
+quantileCI(x, prob = 0.5, conf.level = 0.95, method = "exact", 
+           minLength = FALSE, na.rm = FALSE)
+medianCI(x, conf.level = 0.95, method = "exact", 
+         minLength = FALSE, na.rm = FALSE)
 }
 \arguments{
   \item{x}{ numeric data vector }
   \item{prob}{ quantile }
   \item{conf.level}{ confidence level }
   \item{method}{ character string specifing which method to use; see details. }
+  \item{minLength}{ logical, see details}
   \item{na.rm}{ logical, remove \code{NA} values. }
 }
 \details{
@@ -21,6 +25,8 @@ medianCI(x, conf.level = 0.95, method = "exact", na.rm = FALSE)
   probabilities; see Section 6.8.1 in Sachs and Hedderich (2009). If the result is not 
   unique, i.e. there is more than one interval with coverage proability closest to 
   \code{conf.level}, then a matrix of confidence intervals is returned.
+  If \code{minLength = TRUE}, an exact confidence interval with minimum length is
+  returned.
   
   The asymptotic confidence interval (\code{method = "asymptotic"}) is based on the
   normal approximation of the binomial distribution; see Section 6.8.1 in Sachs and Hedderich (2009).
@@ -36,12 +42,15 @@ medianCI(x, conf.level = 0.95, method = "exact", na.rm = FALSE)
 \author{ Matthias Kohl \email{Matthias.Kohl@stamats.de}}
 \seealso{\code{\link[stats]{binom.test}}, \code{\link[Hmisc]{binconf}}}
 \examples{
-## To get a non-trivial confidence interval for the median
+## To get a non-trivial exact confidence interval for the median
 ## one needs at least 6 observations
 set.seed(123)
 x <- rnorm(8)
 ## exact confidence interval not unique
 (res <- medianCI(x))
+
+## minimum length exact confidence interval
+medianCI(x, minLength = TRUE)
 
 ## asymptotic confidence interval
 medianCI(x, method = "asymptotic")

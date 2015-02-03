@@ -3,6 +3,15 @@
 ###############################################################################
 
 ###########################################################
+## Version 0.97
+###########################################################
+- corrected copy and paste error in documentation of quantileCI.
+- added function or2rr to transform OR to RR.
+- CITATION file now uses bibentry
+- added argument minLength to quantileCI and medianCI
+
+
+###########################################################
 ## Version 0.96
 ###########################################################
 - corrected a bug identified by Steven Kern in the modified Jeffreys interval
