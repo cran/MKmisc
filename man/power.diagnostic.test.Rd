@@ -1,6 +1,10 @@
 \name{power.diagnostic.test}
 \alias{power.diagnostic.test}
 \title{Power calculations for a diagnostic test}
+\description{
+ Compute sample size, power, delta, or significance level of a diagnostic test
+ for an expected sensititivy or specificity.
+}
 \usage{
 power.diagnostic.test(sens = NULL, spec = NULL,
                       n = NULL, delta = NULL, sig.level = 0.05,
@@ -16,14 +20,10 @@ power.diagnostic.test(sens = NULL, spec = NULL,
  confidence limit}
  \item{sig.level}{Significance level (Type I error probability)}
  \item{power}{Power of test (1 minus Type II error probability)}
- \item{prev}{Prevalence, if \code{NULL} prevalence is ignored which means \code{prev = 0.5}
+ \item{prev}{Expected prevalence, if \code{NULL} prevalence is ignored which means \code{prev = 0.5}
  is assumed.}
  \item{method}{exact or asymptotic formula; default \code{"exact"}.}
  \item{NMAX}{Maximum sample size considered in case \code{method = "exact"}.}
-}
-\description{
- Compute sample size, power, delta, or significance level of a diagnostic test
- for an expected sensititivy or specificity.
 }
 
 \details{

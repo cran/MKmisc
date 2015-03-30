@@ -1,6 +1,8 @@
 import("RColorBrewer")
 importFrom("robustbase", "covMcd", "covOGK")
-export(quantileCI,
+export(ssize.pcc,
+       predValues,
+       quantileCI,
        medianCI,
        power.diagnostic.test,
        AUC,

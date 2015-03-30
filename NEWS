@@ -3,6 +3,15 @@
 ###############################################################################
 
 ###########################################################
+## Version 0.98
+###########################################################
+- added function predValues to compute PPV and NPV
+- added function ssize.pcc to calculate sample sizes for developing classifiers
+  using high-dimensional data
+- provide a more detailed description of the package in the DESCRIPTION file
+
+
+###########################################################
 ## Version 0.97
 ###########################################################
 - corrected copy and paste error in documentation of quantileCI.
