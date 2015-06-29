@@ -1,6 +1,6 @@
-ebcc57b21028a1440c089cf782ae4d37 *DESCRIPTION
-23a680f567ba6ed2c6d246cb35de1c85 *NAMESPACE
-684e611ce24e45b200e37c4a31ca52d3 *NEWS
+3a17cdb9c13ec05588c9921960ec36c2 *DESCRIPTION
+e1035535c27cf93cb55604719eafcf8f *NAMESPACE
+705efcdd5aca1dc02ebae2b910b9295a *NEWS
 3cc9e635a3ec8e6cce1202f37acff57b *R/AUC.R
 309c28eb1c3cd81f965247e58446e105 *R/AUCtest.R
 7dec7c3d736543930ee2fef65b009fd5 *R/HLgofTest.R
@@ -12,6 +12,7 @@ f7d47d66165656d09915d8dcd25e6fed *R/corPlot.R
 cdd4dc42994c137cd9002b416ae21d2c *R/heatmapCol.R
 a54304f89a794c289a73f6258c640f46 *R/madMatrix.R
 ab960312a1bc6030ff522c64e97a440e *R/madPlot.R
+48801b8480d41523eb1020abeb448a15 *R/mi.t.test.R
 2805818d272678002a311bc5269a2f46 *R/oneWayAnova.R
 d24a2432abfd153228b2a54811fc19ac *R/or2rr.R
 968391ae6565ef28746e50acd1c7e969 *R/pairwiseAUC.R
@@ -30,7 +31,7 @@ e67773ab2b9294512ff1bbe28d95c4c7 *R/stringSim.R
 ae87364632962fe7e273446cfb072140 *R/traceBack.R
 594e0884c2c6a887945d33a02df682c3 *R/twoWayAnova.R
 2c0de0beabad810df67f07c8f9a0888f *inst/CITATION
-656caed224e085d1e340e475da7424d0 *man/0MKmisc-package.Rd
+d09c9a020cc4e81dc34e89cd81c50e8e *man/0MKmisc-package.Rd
 b5d10b73a5bfbd996b8d66b2fe33a82a *man/AUC.Rd
 211bad071975101c71fa5f5615507360 *man/AUCtest.Rd
 81061fdfb22a4f7ab17d023fd2d1e4ae *man/HLgofTest.Rd
@@ -42,6 +43,7 @@ d20fb759e7a2efa2c5c65f5f6fb15240 *man/fiveNS.Rd
 837ad685acfa27a77944908e511dad24 *man/heatmapCol.Rd
 bbb6d38b8de2cb7bcf8182f3e2021f74 *man/madMatrix.Rd
 e706252d67e9923f0e126ab6a6ac0fba *man/madPlot.Rd
+d2720bf2b4100106fc24ee885c5f9b52 *man/mi.t.test.Rd
 758324203b0adf40efb278af9d158611 *man/oneWayAnova.Rd
 9d757bafbc7f797774dbea444f1a5b1b *man/or2rr.Rd
 90f4e995e9febbc894cb847a3562f5f4 *man/pairwiseAUC.Rd
