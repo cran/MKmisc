@@ -1,6 +1,6 @@
-3a17cdb9c13ec05588c9921960ec36c2 *DESCRIPTION
-e1035535c27cf93cb55604719eafcf8f *NAMESPACE
-705efcdd5aca1dc02ebae2b910b9295a *NEWS
+f644273868d9d9a9aaba65c927a2313f *DESCRIPTION
+c1e9801aa747634867895a1199e3cccb *NAMESPACE
+6e786fb137165aa9218053b569896895 *NEWS
 3cc9e635a3ec8e6cce1202f37acff57b *R/AUC.R
 309c28eb1c3cd81f965247e58446e105 *R/AUCtest.R
 7dec7c3d736543930ee2fef65b009fd5 *R/HLgofTest.R
@@ -24,6 +24,7 @@ c3f9f7a1aa1b89dc13022952641dec91 *R/powerDiagnosticTest.R
 6a899a70c2c2f51c7416d61f236a3b31 *R/qboxplot.R
 bf2737017ab6c55c8c7507da7cf5d192 *R/quantileCI.R
 7c5c758bce47a067911a2549dddd843d *R/repMeans.R
+42e6a67f415c4235e6e5d37524fecb51 *R/simCorVars.R
 374a321055705372d28beca2a1867e58 *R/simPlot.R
 45f036ad9ec9e3aeefe857ba67f57b87 *R/ssizePCC.R
 9ef31389faca759a2a1b8a229a3a880e *R/stringDist.R
@@ -56,6 +57,7 @@ d204778eb1c9f9b1af3771184cadc043 *man/qboxplot.Rd
 7ed13bf6532955ac537ae535af250ade *man/qbxp.stats.Rd
 358850ed927b91bf5f6f43a7acb55543 *man/quantileCI.Rd
 5ea635f08d7f50039c65dc3397da1163 *man/repMeans.Rd
+adcb091b36bf6e5aa0f78a61ee93e7b6 *man/simCorVars.Rd
 dbd273d13ced324192660c1639bc885f *man/simPlot.Rd
 2d9f1fb246e6f59ce2c08503441776cf *man/ssize.pcc.Rd
 d01c0209fc01d01d07cc211d45ebc79d *man/stringDist.Rd
