@@ -1,6 +1,6 @@
-f644273868d9d9a9aaba65c927a2313f *DESCRIPTION
-c1e9801aa747634867895a1199e3cccb *NAMESPACE
-6e786fb137165aa9218053b569896895 *NEWS
+b26d270872ec4595efa6dab22632715c *DESCRIPTION
+af2f9c13856e286470c1968ca375de45 *NAMESPACE
+19c55db53118e33e23de39cd13971cb4 *NEWS
 3cc9e635a3ec8e6cce1202f37acff57b *R/AUC.R
 309c28eb1c3cd81f965247e58446e105 *R/AUCtest.R
 7dec7c3d736543930ee2fef65b009fd5 *R/HLgofTest.R
@@ -22,7 +22,7 @@ f99a8225a926e3148794f7001463fa5b *R/pairwiselogFC.R
 c3f9f7a1aa1b89dc13022952641dec91 *R/powerDiagnosticTest.R
 3a04d7fc3d937ae24b670f3b88d59246 *R/predValues.R
 6a899a70c2c2f51c7416d61f236a3b31 *R/qboxplot.R
-bf2737017ab6c55c8c7507da7cf5d192 *R/quantileCI.R
+9b67ef91500153365f037367283c4e73 *R/quantileCI.R
 7c5c758bce47a067911a2549dddd843d *R/repMeans.R
 42e6a67f415c4235e6e5d37524fecb51 *R/simCorVars.R
 374a321055705372d28beca2a1867e58 *R/simPlot.R
@@ -32,7 +32,7 @@ e67773ab2b9294512ff1bbe28d95c4c7 *R/stringSim.R
 ae87364632962fe7e273446cfb072140 *R/traceBack.R
 594e0884c2c6a887945d33a02df682c3 *R/twoWayAnova.R
 2c0de0beabad810df67f07c8f9a0888f *inst/CITATION
-d09c9a020cc4e81dc34e89cd81c50e8e *man/0MKmisc-package.Rd
+cabe50ea56ffdb6ebc794c8ea967f6f2 *man/0MKmisc-package.Rd
 b5d10b73a5bfbd996b8d66b2fe33a82a *man/AUC.Rd
 211bad071975101c71fa5f5615507360 *man/AUCtest.Rd
 81061fdfb22a4f7ab17d023fd2d1e4ae *man/HLgofTest.Rd
@@ -55,7 +55,7 @@ d9b4e286b707ddcbaf5b2a23c99b08df *man/power.diagnostic.test.Rd
 e56f6b8269e43773731f4887e3c8d69d *man/predValues.Rd
 d204778eb1c9f9b1af3771184cadc043 *man/qboxplot.Rd
 7ed13bf6532955ac537ae535af250ade *man/qbxp.stats.Rd
-358850ed927b91bf5f6f43a7acb55543 *man/quantileCI.Rd
+6a329b2c6f30a3ce3b5e2873f8ddb9ac *man/quantileCI.Rd
 5ea635f08d7f50039c65dc3397da1163 *man/repMeans.Rd
 adcb091b36bf6e5aa0f78a61ee93e7b6 *man/simCorVars.Rd
 dbd273d13ced324192660c1639bc885f *man/simPlot.Rd

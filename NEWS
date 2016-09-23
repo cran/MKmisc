@@ -3,6 +3,17 @@
 ###############################################################################
 
 ###########################################################
+## Version 0.993
+###########################################################
+- added function madCI for computing confidence intervals for MAD
+
+###########################################################
+## Version 0.992
+###########################################################
+- corrected bug in quantileCI reported by Rogier Donders (estimate always
+  median independent of specified prob)
+
+###########################################################
 ## Version 0.991
 ###########################################################
 - added function simCorVars to simulate a pair of variables with a prespecified
