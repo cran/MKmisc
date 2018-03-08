@@ -1,4 +1,4 @@
-import("stats")
+import("stats", "ggplot2")
 importFrom("graphics", "layout", "image", "axis", "box", "par")
 importFrom("grDevices", "colorRampPalette")
 importFrom("robustbase", "covMcd", "covOGK")
@@ -7,10 +7,13 @@ export(simCorVars,
        mi.t.test,
        ssize.pcc,
        predValues,
+       perfMeasures,
        quantileCI,
        medianCI,
        madCI,
+       normCI,
        power.diagnostic.test,
+       power.nb.test,
        AUC,
        AUC.test,
        binomCI,
@@ -23,11 +26,14 @@ export(simCorVars,
        heatmapCol,
        HLgof.test,
        IQrange,
+       sIQR,
        madMatrix,
        madPlot,
        simPlot,
        oneWayAnova,
        or2rr,
+       risks,
+       rrCI,
        pairwise.auc,
        pairwise.fc,
        pairwise.logfc,
@@ -36,8 +42,10 @@ export(simCorVars,
        qboxplot,
        qboxplot.default,
        repMeans,
+       thyroid,
        twoWayAnova)
 
 S3method(qboxplot, default)
 S3method(qboxplot, formula)
 S3method(mi.t.test, default)
+S3method(print, confint)
