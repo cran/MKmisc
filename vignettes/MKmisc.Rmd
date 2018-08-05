@@ -43,9 +43,9 @@ sd(x)
 
 
 ### Five Number Summary
-There are several functions for descriptive statistics. First, there is a function
-that computes a so-called five number summary which in contrast to function 
-fivenum uses the first and third quartile instead of the lower and upper hing.
+Tthere is a function that computes a so-called five number summary which in 
+contrast to function fivenum uses the first and third quartile instead of the 
+lower and upper hinge.
 ```{r}
 fiveNS(x)
 ```
@@ -80,6 +80,30 @@ or2rr(or = 1.5, p0 = 0.4)
 or2rr(or = 1/6, p1 = 0.1)
 ```
 
+### Generalized Logarithm
+The generalized logarithm may be useful as a variance stabilizing transformation
+when also negative values are present.
+```{r}
+curve(log, from = -3, to = 5)
+curve(glog, from = -3, to = 5, add = TRUE, col = "orange")
+legend("topleft", fill = c("black", "orange"), legend = c("log", "glog"))
+```
+
+As in case of function log there is also glog10 and glog2.
+```{r}
+curve(log10(x), from = -3, to = 5)
+curve(glog10(x), from = -3, to = 5, add = TRUE, col = "orange")
+legend("topleft", fill = c("black", "orange"), legend = c("log10", "glog10"))
+```
+
+There are also functions that compute the inverse of the generalized logarithm.
+```{r}
+inv.glog(glog(10))
+inv.glog(glog(10, base = 3), base = 3)
+inv.glog10(glog10(10))
+inv.glog2(glog2(10))
+```
+
 
 ### Simulate Correlated Variables
 To demonstrate Pearson correlation in my lectures, I have written this simple
@@ -98,6 +122,68 @@ values as relative values with respect to the provided reference ranges.
 ```{r, fig.width=7, fig.height=7}
 thyroid(TSH = 1.5, fT3 = 2.5, fT4 = 14, TSHref = c(0.2, 3.0),
         fT3ref = c(1.7, 4.2), fT4ref = c(7.6, 15.0))
+```
+
+
+### Generalized and Negative Logarithm as Transformations
+We can use the generalized logarithm for transforming the axes in ggplot2 plots.
+```{r}
+library(ggplot2)
+data(mpg)
+p1 <- ggplot(mpg, aes(displ, hwy)) + geom_point()
+p1
+p1 + scale_x_log10()
+p1 + scale_x_glog10()
+p1 + scale_y_log10()
+p1 + scale_y_glog10()
+```
+
+The negative logrithm is for instance useful for displaying p values. The 
+interesting values are on the top. This is for instance used in a so-called
+volcano plot.
+```{r}
+x <- matrix(rnorm(1000, mean = 10), nrow = 10)
+g1 <- rep("control", 10)
+y1 <- matrix(rnorm(500, mean = 11.25), nrow = 10)
+y2 <- matrix(rnorm(500, mean = 9.75), nrow = 10)
+g2 <- rep("treatment", 10)
+group <- factor(c(g1, g2))
+Data <- rbind(x, cbind(y1, y2))
+pvals <- apply(Data, 2, function(x, group) t.test(x ~ group)$p.value,
+               group = group)
+## compute log-fold change
+logfc <- function(x, group){
+  res <- tapply(x, group, mean)
+  log2(res[1]/res[2])
+}
+lfcs <- apply(Data, 2, logfc, group = group)
+ps <- data.frame(pvals = pvals, logfc = lfcs)
+ggplot(ps, aes(x = logfc, y = pvals)) + geom_point() +
+    geom_hline(yintercept = 0.05) + scale_y_neglog10() +
+    geom_vline(xintercept = c(-0.1, 0.1)) + xlab("log-fold change") +
+    ylab("-log10(p value)") + ggtitle("A Volcano Plot")
+```
+
+
+
+### Change Data from Wide to Long
+Often it's better to have the data in a long format than in a wide format; e.g.,
+when plotting with package ggplot2. The necessary transformation can be done
+with function melt.long.
+```{r, fig.width=7, fig.height=7}
+library(ggplot2)
+## some random data
+test <- data.frame(x = rnorm(10), y = rnorm(10), z = rnorm(10))
+test.long <- melt.long(test)
+test.long
+ggplot(test.long, aes(x = variable, y = value)) +
+  geom_boxplot(aes(fill = variable))
+## introducing an additional grouping variable
+group <- factor(rep(c("a","b"), each = 5))
+test.long.gr <- melt.long(test, select = 1:2, group = group)
+test.long.gr
+ggplot(test.long.gr, aes(x = variable, y = value, fill = group)) +
+  geom_boxplot()
 ```
 
 
@@ -172,7 +258,6 @@ the relative risk (RR).
 rrCI(a = 15, b = 135, c = 100, d = 150)
 rrCI(a = 75, b = 75, c = 100, d = 150)
 ```
-
 
 ## AUC
 ### Estimation
@@ -295,6 +380,21 @@ perfMeasures(pred, truth = infert$case, namePos = 1)
 ## with group names
 my.case <- factor(infert$case, labels = c("control", "case"))
 perfMeasures(pred, truth = my.case, namePos = "case")
+```
+
+### Optimal Cutoff
+The function optCutoff computes the optimal cutoff for various performance 
+weasures for binary classification. More precisely, all performance measures 
+that are implemented in function perfMeasures.
+```{r}
+## example from dataset infert
+fit <- glm(case ~ spontaneous+induced, data = infert, family = binomial())
+pred <- predict(fit, type = "response")
+optCutoff(pred, truth = infert$case, namePos = 1)
+optCutoff(pred, truth = infert$case, namePos = 1,
+          perfMeasure = "balanced Brier score", max = FALSE)
+optCutoff(pred, truth = infert$case, namePos = 1,
+          perfMeasure = "area under the ROC curve (AUC)")
 ```
 
 
