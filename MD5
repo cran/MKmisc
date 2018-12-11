@@ -1,7 +1,7 @@
-d37a380ad107140590918b440183d5d0 *DESCRIPTION
-b7b7ae720139f70235e0b6b457bc091d *NAMESPACE
-5b9bded1f9a520eefaa6118031f97a59 *NEWS
-2aeca162cbf96078a3419fe193d30cd1 *R/AUC.R
+f0dcc03d7484adfeb72203c0d0a7fb59 *DESCRIPTION
+8faad0846dd39d8fe492d804296d5c26 *NAMESPACE
+c1b3314c7fc5767fad9f401287ce43c8 *NEWS
+69c288bebffba6ab952a8ddf47fd8f96 *R/AUC.R
 309c28eb1c3cd81f965247e58446e105 *R/AUCtest.R
 7dec7c3d736543930ee2fef65b009fd5 *R/HLgofTest.R
 a3e8b6b7836e5ffc98dd2717c70501ac *R/IQrange.R
@@ -26,6 +26,7 @@ f99a8225a926e3148794f7001463fa5b *R/pairwiselogFC.R
 4b48fa048d8fd989efb0b446c1b05059 *R/perfMeasures.R
 c3f9f7a1aa1b89dc13022952641dec91 *R/powerDiagnosticTest.R
 1d3c90d26772bf6b6cba00b845154adc *R/powerNbinomTest.R
+966a73a9cb4d1724854776fcd15a9466 *R/powerWelchttest.R
 3a04d7fc3d937ae24b670f3b88d59246 *R/predValues.R
 6a899a70c2c2f51c7416d61f236a3b31 *R/qboxplot.R
 ddf4dfa09e26f44d280f42bf9fb8efea *R/quantileCI.R
@@ -44,10 +45,10 @@ ae87364632962fe7e273446cfb072140 *R/traceBack.R
 594e0884c2c6a887945d33a02df682c3 *R/twoWayAnova.R
 f28eff20b3541242e79bb49a4b229a46 *build/vignette.rds
 2c0de0beabad810df67f07c8f9a0888f *inst/CITATION
-9448d2dddced737abaffac16d06934e2 *inst/doc/MKmisc.R
-adff215109179da612cc30f43c3ea048 *inst/doc/MKmisc.Rmd
-f637fbb7edffb1ca948daf48344fdb16 *inst/doc/MKmisc.html
-e6f1e830685fd3d3e46134d607b269ae *man/0MKmisc-package.Rd
+03c9d398fad3601e2016c018c76d9c19 *inst/doc/MKmisc.R
+e9203cc529218d3dccaa672ac5a18f65 *inst/doc/MKmisc.Rmd
+744997c6b9802a98f7020388a52c473e *inst/doc/MKmisc.html
+82d4a15c990ea716d4554893c67395f8 *man/0MKmisc-package.Rd
 b5d10b73a5bfbd996b8d66b2fe33a82a *man/AUC.Rd
 211bad071975101c71fa5f5615507360 *man/AUCtest.Rd
 81061fdfb22a4f7ab17d023fd2d1e4ae *man/HLgofTest.Rd
@@ -72,7 +73,8 @@ d2720bf2b4100106fc24ee885c5f9b52 *man/mi.t.test.Rd
 c06161ce56c54a0e151f789c845a3cd2 *man/pairwiselogFC.Rd
 de95b9d8e96bf69cf878d44e34418f15 *man/perfMeasures.Rd
 d9b4e286b707ddcbaf5b2a23c99b08df *man/power.diagnostic.test.Rd
-f6d7bd6af01331a28015834b1a154c2e *man/power.nb.test.Rd
+d5eae824967c8acebbe31524af0d1f0f *man/power.nb.test.Rd
+429ba4007dc292113be0c2278fa4b675 *man/power.welch.t.test.Rd
 e56f6b8269e43773731f4887e3c8d69d *man/predValues.Rd
 3758d8e14cf1f50c61607ad1a951770d *man/print.confint.Rd
 d204778eb1c9f9b1af3771184cadc043 *man/qboxplot.Rd
@@ -90,4 +92,4 @@ d01c0209fc01d01d07cc211d45ebc79d *man/stringDist.Rd
 93b30efaed3f86f85d1b562853ad15f9 *man/traceBack.Rd
 bca1c02c3765184dc34f1ebf74220446 *man/transformations.Rd
 1e0beed645e54091f54cd29ec45155f4 *man/twoWayAnova.Rd
-adff215109179da612cc30f43c3ea048 *vignettes/MKmisc.Rmd
+e9203cc529218d3dccaa672ac5a18f65 *vignettes/MKmisc.Rmd

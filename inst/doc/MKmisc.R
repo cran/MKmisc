@@ -241,6 +241,15 @@ fc <- 1.6
 ssize.pcc(gamma = g, stdFC = fc, nrFeatures = 22000)
 
 ## ------------------------------------------------------------------------
+## identical results as power.t.test, since sd = sd1 = sd2 = 1
+power.welch.t.test(n = 20, delta = 1)
+power.welch.t.test(power = .90, delta = 1)
+power.welch.t.test(power = .90, delta = 1, alternative = "one.sided")
+
+## sd1 = 0.5, sd2 = 1
+power.welch.t.test(delta = 1, sd1 = 0.5, sd2 = 1, power = 0.9)
+
+## ------------------------------------------------------------------------
 ## examples from Table III in Zhu and Lakkis (2014)
 power.nb.test(mu0 = 5.0, RR = 2.0, theta = 1/0.5, duration = 1, power = 0.8, approach = 1)
 power.nb.test(mu0 = 5.0, RR = 2.0, theta = 1/0.5, duration = 1, power = 0.8, approach = 2)
