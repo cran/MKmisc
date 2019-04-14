@@ -117,6 +117,41 @@ normCI(x, sd = 3)
 normCI(x, mean = 2)
 
 ## ------------------------------------------------------------------------
+x <- rnorm(20)
+y <- rnorm(20, sd = 2)
+## paired
+normDiffCI(x, y, paired = TRUE)
+## compare
+normCI(x-y)
+
+## unpaired
+y <- rnorm(10, mean = 1, sd = 2)
+## classical
+normDiffCI(x, y, method = "classical")
+## Welch (default is in case of function t.test)
+normDiffCI(x, y, method = "welch")
+## Hsu
+normDiffCI(x, y, method = "hsu")
+
+## ------------------------------------------------------------------------
+M <- 100
+CIhsu <- CIwelch <- CIclass <- matrix(NA, nrow = M, ncol = 2)
+for(i in 1:M){
+  x <- rnorm(10)
+  y <- rnorm(30, sd = 0.1)
+  CIclass[i,] <- normDiffCI(x, y, method = "classical")$conf.int
+  CIwelch[i,] <- normDiffCI(x, y, method = "welch")$conf.int
+  CIhsu[i,] <- normDiffCI(x, y, method = "hsu")$conf.int
+}
+## coverage probabilies
+## classical
+sum(CIclass[,1] < 0 & 0 < CIclass[,2])/M
+## Welch
+sum(CIwelch[,1] < 0 & 0 < CIwelch[,2])/M
+## Hsu
+sum(CIhsu[,1] < 0 & 0 < CIhsu[,2])/M
+
+## ------------------------------------------------------------------------
 x <- rexp(100, rate = 0.5)
 ## exact
 quantileCI(x = x, prob = 0.95)
@@ -144,6 +179,110 @@ madCI(x = x, constant = 1)
 ## Example from Wikipedia
 rrCI(a = 15, b = 135, c = 100, d = 150)
 rrCI(a = 75, b = 75, c = 100, d = 150)
+
+## ------------------------------------------------------------------------
+## identical results as power.t.test, since sd = sd1 = sd2 = 1
+power.welch.t.test(n = 20, delta = 1)
+power.welch.t.test(power = .90, delta = 1)
+power.welch.t.test(power = .90, delta = 1, alternative = "one.sided")
+
+## sd1 = 0.5, sd2 = 1
+power.welch.t.test(delta = 1, sd1 = 0.5, sd2 = 1, power = 0.9)
+
+## ------------------------------------------------------------------------
+## slightly more conservative than Welch t-test
+power.hsu.t.test(n = 20, delta = 1)
+power.hsu.t.test(power = .90, delta = 1)
+power.hsu.t.test(power = .90, delta = 1, alternative = "one.sided")
+
+## sd1 = 0.5, sd2 = 1
+power.welch.t.test(delta = 0.5, sd1 = 0.5, sd2 = 1, power = 0.9)
+power.hsu.t.test(delta = 0.5, sd1 = 0.5, sd2 = 1, power = 0.9)
+
+## ------------------------------------------------------------------------
+## examples from Table III in Zhu and Lakkis (2014)
+power.nb.test(mu0 = 5.0, RR = 2.0, theta = 1/0.5, duration = 1, power = 0.8, approach = 1)
+power.nb.test(mu0 = 5.0, RR = 2.0, theta = 1/0.5, duration = 1, power = 0.8, approach = 2)
+power.nb.test(mu0 = 5.0, RR = 2.0, theta = 1/0.5, duration = 1, power = 0.8, approach = 3)
+
+## ------------------------------------------------------------------------
+## One-sample test
+X <- matrix(rnorm(10*20, mean = 1), nrow = 10, ncol = 20)
+mod.t.test(X)
+
+## Two-sample test
+set.seed(123)
+X <- rbind(matrix(rnorm(5*20), nrow = 5, ncol = 20),
+           matrix(rnorm(5*20, mean = 1), nrow = 5, ncol = 20))
+g2 <- factor(c(rep("group 1", 10), rep("group 2", 10)))
+mod.t.test(X, group = g2)
+
+## Paired two-sample test
+mod.t.test(X, group = g2, paired = TRUE)
+
+## ------------------------------------------------------------------------
+set.seed(123)
+X <- rbind(matrix(rnorm(5*20), nrow = 5, ncol = 20),
+           matrix(rnorm(5*20, mean = 1), nrow = 5, ncol = 20))
+gr <- factor(c(rep("A1", 5), rep("B2", 5), rep("C3", 5), rep("D4", 5)))
+mod.oneway.test(X, gr)
+
+## ------------------------------------------------------------------------
+pairwise.mod.t.test(X, gr)
+
+## ------------------------------------------------------------------------
+t.test(1:10, y = c(7:20))      # P = .00001855
+t.test(1:10, y = c(7:20, 200)) # P = .1245    -- NOT significant anymore
+hsu.t.test(1:10, y = c(7:20))
+hsu.t.test(1:10, y = c(7:20, 200))
+
+## Traditional interface
+with(sleep, t.test(extra[group == 1], extra[group == 2]))
+with(sleep, hsu.t.test(extra[group == 1], extra[group == 2]))
+## Formula interface
+t.test(extra ~ group, data = sleep)
+hsu.t.test(extra ~ group, data = sleep)
+
+## ------------------------------------------------------------------------
+## Generate some data
+set.seed(123)
+x <- rnorm(25, mean = 1)
+x[sample(1:25, 5)] <- NA
+y <- rnorm(20, mean = -1)
+y[sample(1:20, 4)] <- NA
+pair <- c(rnorm(25, mean = 1), rnorm(20, mean = -1))
+g <- factor(c(rep("yes", 25), rep("no", 20)))
+D <- data.frame(ID = 1:45, variable = c(x, y), pair = pair, group = g)
+
+## Use Amelia to impute missing values
+library(Amelia)
+res <- amelia(D, m = 10, p2s = 0, idvars = "ID", noms = "group")
+
+## Per protocol analysis (Welch two-sample t-test)
+t.test(variable ~ group, data = D)
+## Intention to treat analysis (Multiple Imputation Welch two-sample t-test)
+mi.t.test(res$imputations, x = "variable", y = "group")
+
+## Per protocol analysis (Two-sample t-test)
+t.test(variable ~ group, data = D, var.equal = TRUE)
+## Intention to treat analysis (Multiple Imputation two-sample t-test)
+mi.t.test(res$imputations, x = "variable", y = "group", var.equal = TRUE)
+
+## Specifying alternatives
+mi.t.test(res$imputations, x = "variable", y = "group", alternative = "less")
+mi.t.test(res$imputations, x = "variable", y = "group", alternative = "greater")
+
+## One sample test
+t.test(D$variable[D$group == "yes"])
+mi.t.test(res$imputations, x = "variable", subset = D$group == "yes")
+mi.t.test(res$imputations, x = "variable", mu = -1, subset = D$group == "yes",
+          alternative = "less")
+mi.t.test(res$imputations, x = "variable", mu = -1, subset = D$group == "yes",
+          alternative = "greater")
+
+## paired test
+t.test(D$variable, D$pair, paired = TRUE)
+mi.t.test(res$imputations, x = "variable", y = "pair", paired = TRUE)
 
 ## ------------------------------------------------------------------------
 x <- c(runif(50, max = 0.6), runif(50, min = 0.4))
@@ -239,62 +378,6 @@ power.diagnostic.test(sens = 0.99, delta = 0.12, power = 0.95) # 47
 g <- 0.1
 fc <- 1.6
 ssize.pcc(gamma = g, stdFC = fc, nrFeatures = 22000)
-
-## ------------------------------------------------------------------------
-## identical results as power.t.test, since sd = sd1 = sd2 = 1
-power.welch.t.test(n = 20, delta = 1)
-power.welch.t.test(power = .90, delta = 1)
-power.welch.t.test(power = .90, delta = 1, alternative = "one.sided")
-
-## sd1 = 0.5, sd2 = 1
-power.welch.t.test(delta = 1, sd1 = 0.5, sd2 = 1, power = 0.9)
-
-## ------------------------------------------------------------------------
-## examples from Table III in Zhu and Lakkis (2014)
-power.nb.test(mu0 = 5.0, RR = 2.0, theta = 1/0.5, duration = 1, power = 0.8, approach = 1)
-power.nb.test(mu0 = 5.0, RR = 2.0, theta = 1/0.5, duration = 1, power = 0.8, approach = 2)
-power.nb.test(mu0 = 5.0, RR = 2.0, theta = 1/0.5, duration = 1, power = 0.8, approach = 3)
-
-## ------------------------------------------------------------------------
-## Generate some data
-set.seed(123)
-x <- rnorm(25, mean = 1)
-x[sample(1:25, 5)] <- NA
-y <- rnorm(20, mean = -1)
-y[sample(1:20, 4)] <- NA
-pair <- c(rnorm(25, mean = 1), rnorm(20, mean = -1))
-g <- factor(c(rep("yes", 25), rep("no", 20)))
-D <- data.frame(ID = 1:45, variable = c(x, y), pair = pair, group = g)
-
-## Use Amelia to impute missing values
-library(Amelia)
-res <- amelia(D, m = 10, p2s = 0, idvars = "ID", noms = "group")
-
-## Per protocol analysis (Welch two-sample t-test)
-t.test(variable ~ group, data = D)
-## Intention to treat analysis (Multiple Imputation Welch two-sample t-test)
-mi.t.test(res$imputations, x = "variable", y = "group")
-
-## Per protocol analysis (Two-sample t-test)
-t.test(variable ~ group, data = D, var.equal = TRUE)
-## Intention to treat analysis (Multiple Imputation two-sample t-test)
-mi.t.test(res$imputations, x = "variable", y = "group", var.equal = TRUE)
-
-## Specifying alternatives
-mi.t.test(res$imputations, x = "variable", y = "group", alternative = "less")
-mi.t.test(res$imputations, x = "variable", y = "group", alternative = "greater")
-
-## One sample test
-t.test(D$variable[D$group == "yes"])
-mi.t.test(res$imputations, x = "variable", subset = D$group == "yes")
-mi.t.test(res$imputations, x = "variable", mu = -1, subset = D$group == "yes",
-          alternative = "less")
-mi.t.test(res$imputations, x = "variable", mu = -1, subset = D$group == "yes",
-          alternative = "greater")
-
-## paired test
-t.test(D$variable, D$pair, paired = TRUE)
-mi.t.test(res$imputations, x = "variable", y = "pair", paired = TRUE)
 
 ## ------------------------------------------------------------------------
 M <- matrix(rnorm(100), ncol = 5)
