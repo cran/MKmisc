@@ -1,6 +1,6 @@
-5fbeffe2b1871b40fec6ed885c58cab0 *DESCRIPTION
+f0ff9be3bc03d19901dccad368341b42 *DESCRIPTION
 cadb1bbd23c15706a351c72575682e90 *NAMESPACE
-c58e7887638e1211579cd3b7718917ea *NEWS
+e5b9826d44e6479b8fbe3fb379a8ba14 *NEWS
 69c288bebffba6ab952a8ddf47fd8f96 *R/AUC.R
 309c28eb1c3cd81f965247e58446e105 *R/AUCtest.R
 7dec7c3d736543930ee2fef65b009fd5 *R/HLgofTest.R
@@ -28,7 +28,7 @@ f2a335afb11725b65ddec936abb46499 *R/or2rr.R
 b55dba467c83585a684774eb9d2bf488 *R/pairwiseFC.R
 5e670d05e9f40cb6182ed062612d9377 *R/pairwiseFun.R
 f99a8225a926e3148794f7001463fa5b *R/pairwiselogFC.R
-4b48fa048d8fd989efb0b446c1b05059 *R/perfMeasures.R
+d3972a231edef2c4cb0dc8390845a162 *R/perfMeasures.R
 c3f9f7a1aa1b89dc13022952641dec91 *R/powerDiagnosticTest.R
 780c10d56fefce9eb87c53a89bfb9899 *R/powerHsuttest.R
 1d3c90d26772bf6b6cba00b845154adc *R/powerNbinomTest.R
@@ -51,15 +51,15 @@ ae87364632962fe7e273446cfb072140 *R/traceBack.R
 594e0884c2c6a887945d33a02df682c3 *R/twoWayAnova.R
 d0457211157c58b088ca32c40ee34e69 *build/vignette.rds
 2c0de0beabad810df67f07c8f9a0888f *inst/CITATION
-26998a1510da536285ae99cdb27e1d03 *inst/doc/MKmisc.R
-e134741eab8cf558a2cd0a1353c871da *inst/doc/MKmisc.Rmd
-044e430a306e8386f15f474a9d980fed *inst/doc/MKmisc.html
+2ab839b606fa071adcd95c8557b85526 *inst/doc/MKmisc.R
+4a23bb5827f91de55545375ecf248b2b *inst/doc/MKmisc.Rmd
+2218e9ff55c86517f793d979baba0f4a *inst/doc/MKmisc.html
 a92fbc0f2162170a86285585f0cf0589 *man/0MKmisc-package.Rd
 b5d10b73a5bfbd996b8d66b2fe33a82a *man/AUC.Rd
 211bad071975101c71fa5f5615507360 *man/AUCtest.Rd
 81061fdfb22a4f7ab17d023fd2d1e4ae *man/HLgofTest.Rd
 8e17e79aa4404773dc854fa9e609d2ad *man/IQrange.Rd
-af9d6ace05009e6939ee203e66a44580 *man/binomCI.Rd
+bd66d795e1d4f55cf9d462d0691f395a *man/binomCI.Rd
 5ceeb98698ba43dc88c26d703dfd5a57 *man/corDist.Rd
 07e9d5d59d04c8451b2b173df4ed5dfd *man/corPlot.Rd
 d20fb759e7a2efa2c5c65f5f6fb15240 *man/fiveNS.Rd
@@ -82,7 +82,7 @@ ba8f059a84965940fbe7902cf87bfec1 *man/mod.t.test.Rd
 428b893ff4d6efaaa39666cc9d0f03f4 *man/pairwiseFC.Rd
 8da489a285344141727b8b5c080e761b *man/pairwiseFun.Rd
 c06161ce56c54a0e151f789c845a3cd2 *man/pairwiselogFC.Rd
-de95b9d8e96bf69cf878d44e34418f15 *man/perfMeasures.Rd
+747666d9b1cb7534a29fdaaa0d410ba2 *man/perfMeasures.Rd
 d9b4e286b707ddcbaf5b2a23c99b08df *man/power.diagnostic.test.Rd
 30d2f105282a4e5926e2ad3ed54e07b3 *man/power.hsu.t.test.Rd
 d5eae824967c8acebbe31524af0d1f0f *man/power.nb.test.Rd
@@ -104,4 +104,4 @@ d01c0209fc01d01d07cc211d45ebc79d *man/stringDist.Rd
 93b30efaed3f86f85d1b562853ad15f9 *man/traceBack.Rd
 bca1c02c3765184dc34f1ebf74220446 *man/transformations.Rd
 1e0beed645e54091f54cd29ec45155f4 *man/twoWayAnova.Rd
-e134741eab8cf558a2cd0a1353c871da *vignettes/MKmisc.Rmd
+4a23bb5827f91de55545375ecf248b2b *vignettes/MKmisc.Rmd
