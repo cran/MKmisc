@@ -43,11 +43,39 @@ sd(x)
 
 
 ### Five Number Summary
-Tthere is a function that computes a so-called five number summary which in 
+There is a function that computes a so-called five number summary which in 
 contrast to function fivenum uses the first and third quartile instead of the 
 lower and upper hinge.
 ```{r}
 fiveNS(x)
+```
+
+
+### Coefficient of Variation (CV)
+There are functions to compute the (classical) coefficient of variation as well
+as two robust variants. In case of the robust variants, the mean is replaced 
+by the median and the SD is replaced by the (standardized) MAD and 
+the (standardized) IQR, respectively.
+```{r}
+## 5% outliers
+out <- rbinom(100, prob = 0.05, size = 1)
+sum(out)
+x <- (1-out)*rnorm(100, mean = 10, sd = 2) + out*25
+CV(x)
+medCV(x)
+iqrCV(x)
+```
+
+
+### Signal to Noise Ratio (SNR)
+There are functions to compute the (classical) signal to noise ratio as well
+as two robust variants. In case of the robust variants, the mean is replaced 
+by the median and the SD is replaced by the (standardized) MAD and 
+the (standardized) IQR, respectively.
+```{r}
+SNR(x)
+medSNR(x)
+iqrSNR(x)
 ```
 
 
@@ -258,6 +286,20 @@ sum(CIwelch[,1] < 0 & 0 < CIwelch[,2])/M
 ## Hsu
 sum(CIhsu[,1] < 0 & 0 < CIhsu[,2])/M
 ```
+
+
+### Coefficient of Variation
+We provide 11 different confidence intervals for the (classical) coefficient 
+of variation; e.g.
+```{r}
+x <- rnorm(100, mean = 10, sd = 2) # CV = 0.2
+## default: "miller"
+cvCI(x)
+## Gulhar et al. (2012)
+cvCI(x, method = "gulhar")
+```
+
+For all intervals implemented see the help page of function cvCI.
 
 
 ### Quantiles, Median and MAD
@@ -563,10 +605,10 @@ predValues(sens = 0.998, spec = 0.999996, prev = 1/3)
 ```
 
 
-### Performance Measures
+### Performance Measures and Scores
 In the development of diagnostic tests and more general in binary classification
-a variety of performance measures can be found in literature. Function 
-perfMeasures computes several of them.
+a variety of performance measures and scores can be found in literature. Functions 
+perfMeasures and prefScores compute several of them.
 ```{r}
 ## example from dataset infert
 fit <- glm(case ~ spontaneous+induced, data = infert, family = binomial())
@@ -574,10 +616,16 @@ pred <- predict(fit, type = "response")
 
 ## with group numbers
 perfMeasures(pred, truth = infert$case, namePos = 1)
+perfScores(pred, truth = infert$case, namePos = 1)
 
 ## with group names
 my.case <- factor(infert$case, labels = c("control", "case"))
 perfMeasures(pred, truth = my.case, namePos = "case")
+perfScores(pred, truth = my.case, namePos = "case")
+
+## using weights
+perfMeasures(pred, truth = infert$case, namePos = 1, weight = 0.3)
+perfScores(pred, truth = infert$case, namePos = 1, weight = 0.3)
 ```
 
 ### Optimal Cutoff
@@ -589,12 +637,10 @@ that are implemented in function perfMeasures.
 fit <- glm(case ~ spontaneous+induced, data = infert, family = binomial())
 pred <- predict(fit, type = "response")
 optCutoff(pred, truth = infert$case, namePos = 1)
-optCutoff(pred, truth = infert$case, namePos = 1,
-          perfMeasure = "balanced Brier score", max = FALSE)
-optCutoff(pred, truth = infert$case, namePos = 1,
-          perfMeasure = "area under the ROC curve (AUC)")
 ```
-
+The computation of an optimal cut-off doesn't make any sense for continuous 
+scoring rules as their computation does not involve any cut-off 
+(discretization/dichotomization).
 
 ### Hosmer-Lemeshow and le Cessie-van Houwelingen-Copas-Hosmer
 These tests are used to investigate the goodness of fit in logistic regression.

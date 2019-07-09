@@ -13,6 +13,20 @@ sd(x)
 ## ------------------------------------------------------------------------
 fiveNS(x)
 
+## ------------------------------------------------------------------------
+## 5% outliers
+out <- rbinom(100, prob = 0.05, size = 1)
+sum(out)
+x <- (1-out)*rnorm(100, mean = 10, sd = 2) + out*25
+CV(x)
+medCV(x)
+iqrCV(x)
+
+## ------------------------------------------------------------------------
+SNR(x)
+medSNR(x)
+iqrSNR(x)
+
 ## ---- fig.width=7, fig.height=7------------------------------------------
 x <- rt(10, df = 3)
 par(mfrow = c(1,2))
@@ -150,6 +164,13 @@ sum(CIclass[,1] < 0 & 0 < CIclass[,2])/M
 sum(CIwelch[,1] < 0 & 0 < CIwelch[,2])/M
 ## Hsu
 sum(CIhsu[,1] < 0 & 0 < CIhsu[,2])/M
+
+## ------------------------------------------------------------------------
+x <- rnorm(100, mean = 10, sd = 2) # CV = 0.2
+## default: "miller"
+cvCI(x)
+## Gulhar et al. (2012)
+cvCI(x, method = "gulhar")
 
 ## ------------------------------------------------------------------------
 x <- rexp(100, rate = 0.5)
@@ -345,20 +366,22 @@ pred <- predict(fit, type = "response")
 
 ## with group numbers
 perfMeasures(pred, truth = infert$case, namePos = 1)
+perfScores(pred, truth = infert$case, namePos = 1)
 
 ## with group names
 my.case <- factor(infert$case, labels = c("control", "case"))
 perfMeasures(pred, truth = my.case, namePos = "case")
+perfScores(pred, truth = my.case, namePos = "case")
+
+## using weights
+perfMeasures(pred, truth = infert$case, namePos = 1, weight = 0.3)
+perfScores(pred, truth = infert$case, namePos = 1, weight = 0.3)
 
 ## ------------------------------------------------------------------------
 ## example from dataset infert
 fit <- glm(case ~ spontaneous+induced, data = infert, family = binomial())
 pred <- predict(fit, type = "response")
 optCutoff(pred, truth = infert$case, namePos = 1)
-optCutoff(pred, truth = infert$case, namePos = 1,
-          perfMeasure = "balanced Brier score", max = FALSE)
-optCutoff(pred, truth = infert$case, namePos = 1,
-          perfMeasure = "area under the ROC curve (AUC)")
 
 ## ------------------------------------------------------------------------
 ## Hosmer-Lemeshow goodness of fit tests for C and H statistic 

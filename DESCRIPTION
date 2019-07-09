@@ -1,6 +1,6 @@
 Package: MKmisc
-Version: 1.4
-Date: 2019-05-21
+Version: 1.5
+Date: 2019-07-09
 Title: Miscellaneous Functions from M. Kohl
 Authors@R: person("Matthias", "Kohl", role = c("aut", "cre"),
                   email = "Matthias.Kohl@stamats.de", 
@@ -17,6 +17,6 @@ Description: Contains several functions for statistical data analysis; e.g. for 
 License: LGPL-3
 URL: http://www.stamats.de/
 NeedsCompilation: no
-Packaged: 2019-05-21 06:58:39 UTC; kohlm
+Packaged: 2019-07-09 18:43:28 UTC; kohlm
 Repository: CRAN
-Date/Publication: 2019-05-21 07:30:15 UTC
+Date/Publication: 2019-07-09 19:10:02 UTC
