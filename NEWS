@@ -3,6 +3,20 @@
 ###############################################################################
 
 ###########################################################
+## Version 1.8
+###########################################################
+- adapted links (http -> https) as requested by CRAN during submission.
+
+
+###########################################################
+## Version 1.7
+###########################################################
+- Changed return value of imputeSD
+- Removed bug in power.welch.t.test reported by Nicholas Lewin-Koh, when
+  delta should be computed for given n, power, etc.
+
+
+###########################################################
 ## Version 1.6
 ###########################################################
 - Removed bug in mi.t.test in case a subset is specified as reported by 

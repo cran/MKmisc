@@ -1,6 +1,6 @@
-c9069f005d4fef14c976b93d8fafd984 *DESCRIPTION
+4f5971eb71496c1d37f688ee64a5c81a *DESCRIPTION
 82b5673f6946bad9edfea05f0df2bf00 *NAMESPACE
-6946839f96e0b7604f75bb0908ae037a *NEWS
+ed7333a66196299715e75c6fe637962a *NEWS
 69c288bebffba6ab952a8ddf47fd8f96 *R/AUC.R
 309c28eb1c3cd81f965247e58446e105 *R/AUCtest.R
 3c4bef1a49ece47c3fadae153212e241 *R/CV.R
@@ -15,7 +15,7 @@ f7d47d66165656d09915d8dcd25e6fed *R/corPlot.R
 fc0f8d4d5677177f2e530d447ecdb54e *R/glog.R
 cdd4dc42994c137cd9002b416ae21d2c *R/heatmapCol.R
 63b6d3124e77f4a4590e96cd6659b7f0 *R/hsu.t.test.R
-098683d7acfabbce6494f616f3fedc1b *R/imputeSD.R
+9360119837dcfde5de20a65c3960af0a *R/imputeSD.R
 a54304f89a794c289a73f6258c640f46 *R/madMatrix.R
 ab960312a1bc6030ff522c64e97a440e *R/madPlot.R
 b90143654fe6bf138b7b9791e87f1d81 *R/meanAD.R
@@ -38,7 +38,7 @@ d7eb1ed0794de63f9429640ac2918e79 *R/perfScores.R
 c3f9f7a1aa1b89dc13022952641dec91 *R/powerDiagnosticTest.R
 780c10d56fefce9eb87c53a89bfb9899 *R/powerHsuttest.R
 1d3c90d26772bf6b6cba00b845154adc *R/powerNbinomTest.R
-7ff71da3ca01aca1a83055e5fda5c438 *R/powerWelchttest.R
+bcb39b80123d1b58ab98b0f0938aa124 *R/powerWelchttest.R
 3a04d7fc3d937ae24b670f3b88d59246 *R/predValues.R
 6a899a70c2c2f51c7416d61f236a3b31 *R/qboxplot.R
 ddf4dfa09e26f44d280f42bf9fb8efea *R/quantileCI.R
@@ -55,12 +55,12 @@ e67773ab2b9294512ff1bbe28d95c4c7 *R/stringSim.R
 ae87364632962fe7e273446cfb072140 *R/traceBack.R
 095e5e89d593ba0b87f1b367a250d6ce *R/transformations.R
 594e0884c2c6a887945d33a02df682c3 *R/twoWayAnova.R
-b97e12613d8bdb0e28a8879f7fd84a25 *build/vignette.rds
-2c0de0beabad810df67f07c8f9a0888f *inst/CITATION
-bf0cc07a72bf98c55b9a2bac675fdfe3 *inst/doc/MKmisc.R
+87e3dede3f0ca9f1857663a2610534ee *build/vignette.rds
+21af30db861ad69ae20d3cb3787b8ce6 *inst/CITATION
+fce1af4bac1bcf644c59438298c19714 *inst/doc/MKmisc.R
 80544fc907516265620369e5cbe084ef *inst/doc/MKmisc.Rmd
-18fe129795b303650fbf622ce04c9ded *inst/doc/MKmisc.html
-20e7b1f379dee731ed5a18c3536ed62b *man/0MKmisc-package.Rd
+36aa9ce3df3636998a307e05660e2596 *inst/doc/MKmisc.html
+b0ebca40690e4f436ab00c1a5e392e5e *man/0MKmisc-package.Rd
 b5d10b73a5bfbd996b8d66b2fe33a82a *man/AUC.Rd
 211bad071975101c71fa5f5615507360 *man/AUCtest.Rd
 1f0c262d61df149184da4eada01190da *man/CV.Rd
@@ -108,7 +108,7 @@ d204778eb1c9f9b1af3771184cadc043 *man/qboxplot.Rd
 4460125143f4805d035e5627aa339be5 *man/rrCI.Rd
 adcb091b36bf6e5aa0f78a61ee93e7b6 *man/simCorVars.Rd
 dbd273d13ced324192660c1639bc885f *man/simPlot.Rd
-2d9f1fb246e6f59ce2c08503441776cf *man/ssize.pcc.Rd
+879e74f6e5b8f680c6180b91d7c44ab0 *man/ssize.pcc.Rd
 d01c0209fc01d01d07cc211d45ebc79d *man/stringDist.Rd
 666f258fe96f9c6dc68607b864d4f4f1 *man/stringSim.Rd
 541ccb3c95d5646f9716e63e417fdce0 *man/thyroid.Rd
