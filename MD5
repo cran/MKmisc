@@ -1,6 +1,6 @@
-4f5971eb71496c1d37f688ee64a5c81a *DESCRIPTION
+7f35667cf84ed28eea3ffc8e1bdbd354 *DESCRIPTION
 82b5673f6946bad9edfea05f0df2bf00 *NAMESPACE
-ed7333a66196299715e75c6fe637962a *NEWS
+10c347d69ebd38f3d546c29d315f456e *NEWS
 69c288bebffba6ab952a8ddf47fd8f96 *R/AUC.R
 309c28eb1c3cd81f965247e58446e105 *R/AUCtest.R
 3c4bef1a49ece47c3fadae153212e241 *R/CV.R
@@ -55,12 +55,12 @@ e67773ab2b9294512ff1bbe28d95c4c7 *R/stringSim.R
 ae87364632962fe7e273446cfb072140 *R/traceBack.R
 095e5e89d593ba0b87f1b367a250d6ce *R/transformations.R
 594e0884c2c6a887945d33a02df682c3 *R/twoWayAnova.R
-87e3dede3f0ca9f1857663a2610534ee *build/vignette.rds
-21af30db861ad69ae20d3cb3787b8ce6 *inst/CITATION
+3dfc1a22833116468ba5b29866339024 *build/vignette.rds
+7e9b71cd70ff0a8e328d2a7844eb3e95 *inst/CITATION
 fce1af4bac1bcf644c59438298c19714 *inst/doc/MKmisc.R
 80544fc907516265620369e5cbe084ef *inst/doc/MKmisc.Rmd
-36aa9ce3df3636998a307e05660e2596 *inst/doc/MKmisc.html
-b0ebca40690e4f436ab00c1a5e392e5e *man/0MKmisc-package.Rd
+564b893c6b38723d148737bb41130d24 *inst/doc/MKmisc.html
+4a12eb80cfc90170fa8869b9125be1b8 *man/0MKmisc-package.Rd
 b5d10b73a5bfbd996b8d66b2fe33a82a *man/AUC.Rd
 211bad071975101c71fa5f5615507360 *man/AUCtest.Rd
 1f0c262d61df149184da4eada01190da *man/CV.Rd
@@ -80,7 +80,7 @@ fbdf8c5a09ce91b010e43850fe14f170 *man/hsu.t.test.Rd
 e706252d67e9923f0e126ab6a6ac0fba *man/madPlot.Rd
 41b0c8380a24ba96c35f19f8d07239bf *man/meanAD.Rd
 0f0e0b84f661601712c3e3734cdb793c *man/melt.long.Rd
-d2720bf2b4100106fc24ee885c5f9b52 *man/mi.t.test.Rd
+c3baf5a7225a0e45fcf221d94a438df8 *man/mi.t.test.Rd
 1372aa795d75551f5bc12378c1e99cca *man/mod.oneway.test.Rd
 ba8f059a84965940fbe7902cf87bfec1 *man/mod.t.test.Rd
 1909aa8aa46a2080493125f0d4aa2eeb *man/normCI.Rd
@@ -100,8 +100,8 @@ d5eae824967c8acebbe31524af0d1f0f *man/power.nb.test.Rd
 429ba4007dc292113be0c2278fa4b675 *man/power.welch.t.test.Rd
 e56f6b8269e43773731f4887e3c8d69d *man/predValues.Rd
 3758d8e14cf1f50c61607ad1a951770d *man/print.confint.Rd
-d204778eb1c9f9b1af3771184cadc043 *man/qboxplot.Rd
-7ed13bf6532955ac537ae535af250ade *man/qbxp.stats.Rd
+029b22fbc1f47c804dc73964eab922bc *man/qboxplot.Rd
+d2ec05622649252b1ba634164f99e07d *man/qbxp.stats.Rd
 4585dffc784eb905dcb8c99b220f70aa *man/quantileCI.Rd
 5ea635f08d7f50039c65dc3397da1163 *man/repMeans.Rd
 5dafefb88eed4a34dcbb79fd2b2be77a *man/risks.Rd
