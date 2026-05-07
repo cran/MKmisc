@@ -30,7 +30,7 @@ SNR(x)
 medSNR(x)
 iqrSNR(x)
 
-## ---- fig.width=7, fig.height=7-----------------------------------------------
+## ----fig.width=7, fig.height=7------------------------------------------------
 x <- rt(10, df = 3)
 par(mfrow = c(1,2))
 qboxplot(x, main = "1st and 3rd quartile")
@@ -61,11 +61,11 @@ inv.glog(glog(10, base = 3), base = 3)
 inv.glog10(glog10(10))
 inv.glog2(glog2(10))
 
-## ---- fig.width=7, fig.height=7-----------------------------------------------
+## ----fig.width=7, fig.height=7------------------------------------------------
 res <- simCorVars(n = 500, r = 0.8)
 cor(res$Var1, res$Var2)
 
-## ---- fig.width=7, fig.height=7-----------------------------------------------
+## ----fig.width=7, fig.height=7------------------------------------------------
 thyroid(TSH = 1.5, fT3 = 2.5, fT4 = 14, TSHref = c(0.2, 3.0),
         fT3ref = c(1.7, 4.2), fT4ref = c(7.6, 15.0))
 
@@ -101,7 +101,7 @@ ggplot(ps, aes(x = logfc, y = pvals)) + geom_point() +
     geom_vline(xintercept = c(-0.1, 0.1)) + xlab("log-fold change") +
     ylab("-log10(p value)") + ggtitle("A Volcano Plot")
 
-## ---- fig.width=7, fig.height=7-----------------------------------------------
+## ----fig.width=7, fig.height=7------------------------------------------------
 library(ggplot2)
 ## some random data
 test <- data.frame(x = rnorm(10), y = rnorm(10), z = rnorm(10))
@@ -443,13 +443,13 @@ corDist(M, method = "mcd")
 ## -----------------------------------------------------------------------------
 madMatrix(t(M))
 
-## ---- fig.width=8, fig.height=7-----------------------------------------------
+## ----fig.width=8, fig.height=7------------------------------------------------
 M <- matrix(rnorm(1000), ncol = 20)
 colnames(M) <- paste("Sample", 1:20)
 M.cor <- cor(M)
 corPlot(M.cor, minCor = min(M.cor), labels = colnames(M))
 
-## ---- fig.width=8, fig.height=7-----------------------------------------------
+## ----fig.width=8, fig.height=7------------------------------------------------
 ## random data
 x <- matrix(rnorm(1000), ncol = 10)
 ## outliers
@@ -460,7 +460,7 @@ madPlot(x, new = TRUE, maxMAD = 2.5, labels = TRUE,
 corPlot(x, new = TRUE, minCor = -0.5, labels = TRUE,
         title = "Correlation: Outlier masked")
 
-## ---- fig.width=7, fig.height=9-----------------------------------------------
+## ----fig.width=7, fig.height=9------------------------------------------------
 ## generate some random data
 data.plot <- matrix(rnorm(100*50, sd = 1), ncol = 50)
 colnames(data.plot) <- paste("patient", 1:50)

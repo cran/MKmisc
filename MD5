@@ -1,6 +1,6 @@
-7f35667cf84ed28eea3ffc8e1bdbd354 *DESCRIPTION
-82b5673f6946bad9edfea05f0df2bf00 *NAMESPACE
-10c347d69ebd38f3d546c29d315f456e *NEWS
+66b1c8d84faacd550042dd9cc3fb0dc4 *DESCRIPTION
+efcc768d6ddd10a3627c894a38c9d180 *NAMESPACE
+a14a46eb3e624affcfe3eb917876fd35 *NEWS
 69c288bebffba6ab952a8ddf47fd8f96 *R/AUC.R
 309c28eb1c3cd81f965247e58446e105 *R/AUCtest.R
 3c4bef1a49ece47c3fadae153212e241 *R/CV.R
@@ -21,7 +21,7 @@ ab960312a1bc6030ff522c64e97a440e *R/madPlot.R
 b90143654fe6bf138b7b9791e87f1d81 *R/meanAD.R
 cb5647fa29e36a6107523a83cc6f99e0 *R/melt.long.R
 d752542feeb8fb1908c6c1bf39dbb834 *R/mi.t.test.R
-ba41cd8a85fe49f517abdb2010df185e *R/mod.oneway.test.R
+5ba0e9825b63366826b37b1f2364dbb4 *R/mod.oneway.test.R
 3206317e2bb4e7eec9acad9ff9729e4b *R/mod.t.test.R
 ece302bf63d2aab5106ba55d1f66bbc5 *R/normCI.R
 23c48d83278856d8979d4b3ddb26ec42 *R/normDiffCI.R
@@ -55,11 +55,11 @@ e67773ab2b9294512ff1bbe28d95c4c7 *R/stringSim.R
 ae87364632962fe7e273446cfb072140 *R/traceBack.R
 095e5e89d593ba0b87f1b367a250d6ce *R/transformations.R
 594e0884c2c6a887945d33a02df682c3 *R/twoWayAnova.R
-3dfc1a22833116468ba5b29866339024 *build/vignette.rds
+4a7989b1a067035ec45cbcf96d0ecf29 *build/vignette.rds
 7e9b71cd70ff0a8e328d2a7844eb3e95 *inst/CITATION
-fce1af4bac1bcf644c59438298c19714 *inst/doc/MKmisc.R
+0ae326915cf793d6bf03d1d546f2717b *inst/doc/MKmisc.R
 80544fc907516265620369e5cbe084ef *inst/doc/MKmisc.Rmd
-564b893c6b38723d148737bb41130d24 *inst/doc/MKmisc.html
+9c6e50c560d539cf9ae21e7e3fbee13b *inst/doc/MKmisc.html
 4a12eb80cfc90170fa8869b9125be1b8 *man/0MKmisc-package.Rd
 b5d10b73a5bfbd996b8d66b2fe33a82a *man/AUC.Rd
 211bad071975101c71fa5f5615507360 *man/AUCtest.Rd
@@ -81,7 +81,7 @@ e706252d67e9923f0e126ab6a6ac0fba *man/madPlot.Rd
 41b0c8380a24ba96c35f19f8d07239bf *man/meanAD.Rd
 0f0e0b84f661601712c3e3734cdb793c *man/melt.long.Rd
 c3baf5a7225a0e45fcf221d94a438df8 *man/mi.t.test.Rd
-1372aa795d75551f5bc12378c1e99cca *man/mod.oneway.test.Rd
+8c530d3611f0681002ca64184e2d372c *man/mod.oneway.test.Rd
 ba8f059a84965940fbe7902cf87bfec1 *man/mod.t.test.Rd
 1909aa8aa46a2080493125f0d4aa2eeb *man/normCI.Rd
 0e91dbbec4cef47cb83922badd0ce302 *man/normDiffCI.Rd
